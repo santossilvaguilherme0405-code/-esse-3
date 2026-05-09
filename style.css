@@ -311,8 +311,45 @@ margin-top:50px;
 }
 
 .light-mode{
-background:#f5fff6;
-color:black;
+background:#eaf7ee;
+color:#111;
+}
+
+.light-mode header{
+background:rgba(255,255,255,0.8);
+}
+
+.light-mode nav ul li a{
+color:#111;
+}
+
+.light-mode .card,
+.light-mode .weather-box,
+.light-mode .dashboard-card,
+.light-mode .monitor-box,
+.light-mode .simulator-box,
+.light-mode .ia-box{
+background:white;
+color:#111;
+box-shadow:0 0 20px rgba(0,0,0,0.08);
+}
+
+.light-mode .modal-content{
+background:white;
+color:#111;
+}
+
+.light-mode footer{
+background:#d8ecd9;
+}
+
+.light-mode input{
+background:#f5f5f5;
+color:#111;
+}
+
+.light-mode button{
+color:white;
 }
 
 .light-mode nav ul li a{
