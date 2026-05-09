@@ -427,3 +427,41 @@ color:#111 !important;
 .light-mode label{
 color:#111 !important;
 }
+
+.ia-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin-bottom:40px;
+}
+
+.ia-grid button{
+padding:20px;
+border:none;
+border-radius:20px;
+background:linear-gradient(45deg,#00ff88,#00c853);
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+transition:0.4s;
+color:black;
+}
+
+.ia-grid button:hover{
+transform:translateY(-5px) scale(1.03);
+box-shadow:0 0 20px rgba(0,255,136,0.5);
+}
+
+.ia-resposta{
+background:rgba(255,255,255,0.05);
+padding:35px;
+border-radius:25px;
+font-size:20px;
+line-height:1.8;
+backdrop-filter:blur(10px);
+}
+
+.light-mode .ia-resposta{
+background:white;
+color:#111;
+}
