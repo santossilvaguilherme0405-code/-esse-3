@@ -517,102 +517,92 @@ ${nivel}
 
 }
 
-function responderIA(){
-
-const pergunta =
-document.getElementById('perguntaIA').value.toLowerCase();
+function mostrarInfo(tipo){
 
 const resposta =
-document.getElementById('respostaIA');
+document.getElementById('iaResposta');
 
-if(
-pergunta.includes('água') ||
-pergunta.includes('irrigação')
-){
+if(tipo == 'agua'){
 
-resposta.innerHTML =
-'💧 Sistemas de irrigação inteligente utilizam sensores para economizar água e aumentar a eficiência da produção agrícola.';
+resposta.innerHTML = `
 
-}
+<h3>💧 Economia de Água</h3>
 
-else if(
-pergunta.includes('energia') ||
-pergunta.includes('solar')
-){
+<p>
+A irrigação inteligente utiliza sensores modernos para analisar a umidade do solo e evitar desperdícios. Essa tecnologia ajuda produtores rurais a economizar água, reduzir custos e preservar rios e nascentes.
+</p>
 
-resposta.innerHTML =
-'☀️ A energia solar reduz custos nas fazendas e ajuda a diminuir impactos ambientais.';
+`;
 
 }
 
-else if(
-pergunta.includes('solo')
-){
+else if(tipo == 'energia'){
 
-resposta.innerHTML =
-'🌱 O manejo sustentável do solo preserva nutrientes e evita erosão.';
+resposta.innerHTML = `
 
-}
+<h3>☀️ Energia Solar</h3>
 
-else if(
-pergunta.includes('drone') ||
-pergunta.includes('drones')
-){
+<p>
+A energia solar é uma alternativa limpa e renovável muito importante para o agro sustentável. Painéis solares podem abastecer propriedades rurais e diminuir impactos ambientais.
+</p>
 
-resposta.innerHTML =
-'🚁 Drones agrícolas ajudam no monitoramento das plantações, identificação de pragas e aumento da produtividade.';
+`;
 
 }
 
-else if(
-pergunta.includes('clima')
-){
+else if(tipo == 'drones'){
 
-resposta.innerHTML =
-'🌦️ O monitoramento climático ajuda produtores a prevenir perdas causadas por seca, geada ou excesso de chuva.';
+resposta.innerHTML = `
 
-}
+<h3>🚁 Drones Agrícolas</h3>
 
-else if(
-pergunta.includes('sustentabilidade')
-){
+<p>
+Os drones agrícolas ajudam no monitoramento das plantações, identificação de pragas e análise das lavouras, aumentando produtividade e reduzindo desperdícios.
+</p>
 
-resposta.innerHTML =
-'🌎 Agricultura sustentável busca produzir alimentos preservando água, solo, florestas e reduzindo poluição.';
+`;
 
 }
 
-else if(
-pergunta.includes('tecnologia')
-){
+else if(tipo == 'solo'){
 
-resposta.innerHTML =
-'🤖 Tecnologias modernas tornam o agro mais eficiente, produtivo e sustentável.';
+resposta.innerHTML = `
 
-}
+<h3>🌱 Preservação do Solo</h3>
 
-else if(
-pergunta.includes('produção')
-){
+<p>
+A preservação do solo é essencial para garantir produção agrícola no futuro. Técnicas sustentáveis evitam erosão e mantêm nutrientes importantes para as plantações.
+</p>
 
-resposta.innerHTML =
-'🌾 A produção agrícola sustentável utiliza inovação para aumentar a produtividade sem prejudicar o meio ambiente.';
+`;
 
 }
 
-else if(
-pergunta.includes('meio ambiente')
-){
+else if(tipo == 'clima'){
 
-resposta.innerHTML =
-'🌳 Preservar o meio ambiente é essencial para garantir recursos naturais para as futuras gerações.';
+resposta.innerHTML = `
+
+<h3>🌦️ Mudanças Climáticas</h3>
+
+<p>
+As mudanças climáticas afetam diretamente a agricultura. Secas, geadas e chuvas intensas podem prejudicar plantações e aumentar prejuízos no campo.
+</p>
+
+`;
 
 }
 
-else{
+else if(tipo == 'sustentabilidade'){
 
-resposta.innerHTML =
-'🤖 A agricultura moderna combina tecnologia, sustentabilidade e inovação para produzir alimentos de forma eficiente e responsável.';
+resposta.innerHTML = `
+
+<h3>🌎 Sustentabilidade</h3>
+
+<p>
+A agricultura sustentável busca equilibrar produção agrícola, preservação ambiental e desenvolvimento econômico para garantir alimentos e recursos naturais às futuras gerações.
+</p>
+
+`;
 
 }
 
