@@ -454,6 +454,18 @@ const temp = Math.round(data.main.temp);
 
 document.querySelector('.weather-box').innerHTML = `
 
+document.getElementById('tempMapa').innerHTML =
+temp + '°C';
+
+document.getElementById('umidadeMapa').innerHTML =
+data.main.humidity + '%';
+
+document.getElementById('ventoMapa').innerHTML =
+data.wind.speed + ' km/h';
+
+document.getElementById('climaMapa').innerHTML =
+data.weather[0].description;
+
 <h3>🌦️ ${data.name}</h3>
 
 <p>🌡️ Temperatura: ${temp}°C</p>
