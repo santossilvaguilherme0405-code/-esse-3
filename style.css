@@ -525,3 +525,58 @@ color:#111;
 .light-mode .ia-grid button{
 color:#111;
 }
+
+.climate-map{
+position:relative;
+border-radius:30px;
+overflow:hidden;
+box-shadow:0 0 40px rgba(0,255,136,0.15);
+}
+
+.climate-map img{
+width:100%;
+height:600px;
+object-fit:cover;
+filter:brightness(0.6);
+}
+
+.map-overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+gap:30px;
+flex-wrap:wrap;
+padding:40px;
+}
+
+.climate-card{
+background:rgba(0,0,0,0.5);
+backdrop-filter:blur(10px);
+padding:30px;
+border-radius:25px;
+font-size:22px;
+text-align:center;
+min-width:220px;
+border:1px solid rgba(255,255,255,0.1);
+transition:0.4s;
+}
+
+.climate-card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 25px rgba(0,255,136,0.5);
+}
+
+.climate-card b{
+font-size:35px;
+color:#00ff88;
+}
+
+.light-mode .climate-card{
+background:rgba(255,255,255,0.8);
+color:#111;
+}
