@@ -169,17 +169,39 @@ Calcular Sustentabilidade
 
 <section class="ia-section">
 
-<h2 class="title">Assistente Agro IA</h2>
+<h2 class="title">🌱 Central Educacional Agro</h2>
 
-<div class="ia-box">
+<div class="ia-grid">
 
-<input type="text" id="perguntaIA" placeholder="Faça uma pergunta...">
-
-<button onclick="responderIA()">
-Perguntar
+<button onclick="mostrarInfo('agua')">
+💧 Economia de Água
 </button>
 
-<div id="respostaIA"></div>
+<button onclick="mostrarInfo('energia')">
+☀️ Energia Solar
+</button>
+
+<button onclick="mostrarInfo('drones')">
+🚁 Drones Agrícolas
+</button>
+
+<button onclick="mostrarInfo('solo')">
+🌱 Preservação do Solo
+</button>
+
+<button onclick="mostrarInfo('clima')">
+🌦️ Mudanças Climáticas
+</button>
+
+<button onclick="mostrarInfo('sustentabilidade')">
+🌎 Sustentabilidade
+</button>
+
+</div>
+
+<div class="ia-resposta" id="iaResposta">
+
+Clique em um tema acima para aprender mais sobre agricultura sustentável.
 
 </div>
 
