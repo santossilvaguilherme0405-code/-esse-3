@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Agro Forte - Futuro Sustentável</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+</head>
+
+<body>
+
+<div id="particles-js"></div>
+
+<header>
+
+<nav>
+
+<div class="logo">🌱 AgroFuture</div>
+
+<ul>
+<li><a href="#inicio">Início</a></li>
+<li><a href="#tecnologias">Tecnologias</a></li>
+<li><a href="#clima">Clima</a></li>
+<li><a href="#mapa">Mapa</a></li>
+</ul>
+
+<div class="buttons-nav">
+<button id="themeBtn">🌙</button>
+<button id="zoomIn">A+</button>
+<button id="zoomOut">A-</button>
+</div>
+
+</nav>
+
+</header>
+
+<section class="hero" id="inicio">
+
+<div class="hero-content">
+
+<h1>
+AGRO FORTE <br>
+FUTURO SUSTENTÁVEL
+</h1>
+
+<p>
+Equilíbrio entre produção agrícola, tecnologia e preservação ambiental.
+</p>
+
+<a href="#tecnologias" class="btn">
+Explorar o Futuro
+</a>
+
+</div>
+
+</section>
+
+<section class="section" id="tecnologias">
+
+<h2 class="title">Tecnologias Sustentáveis</h2>
+
+<div class="cards">
+
+<div class="card" onclick="openModal(1)">
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxu4dNOazibN4iARJRyAJvg_WEutVfIblLxw&s">
+
+<h3>🌾 Irrigação Inteligente</h3>
+
+<p>
+Sensores modernos ajudam a economizar água.
+</p>
+
+</div>
+
+<div class="card" onclick="openModal(2)">
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVRAtwWSKrPG8t0dZbfo2qdBneLQimVkOmng&s">
+
+<h3>🚁 Drones Agrícolas</h3>
+
+<p>
+Tecnologia aérea monitorando plantações.
+</p>
+
+</div>
+
+<div class="card" onclick="openModal(3)">
+
+<img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1600&auto=format&fit=crop">
+
+<h3>☀️ Energia Solar</h3>
+
+<p>
+Energia limpa para fazendas sustentáveis.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="weather-section" id="clima">
+
+<h2 class="title">Clima em Tempo Real</h2>
+
+<div class="weather-box">
+
+<h3>🌦️ Carregando...</h3>
+
+</div>
+
+</section>
+  
+<section class="map-section" id="mapa">
+
+<h2 class="title">Mapa do Agro Sustentável</h2>
+
+<div class="map-container">
+
+<iframe
+src="https://www.openstreetmap.org/export/embed.html?bbox=-51.55%2C-25.45%2C-51.40%2C-25.30&layer=mapnik"
+width="100%"
+height="450"
+style="border:0; border-radius:25px;">
+</iframe>
+  
+</div>
+
+</section>
+
+<section class="simulator-section">
+
+<h2 class="title">Simulador Sustentável</h2>
+
+<div class="simulator-box">
+
+<label>💧 Uso inteligente de água</label>
+<input type="range" min="0" max="100" value="50" id="agua">
+
+<label>☀️ Uso de energia solar</label>
+<input type="range" min="0" max="100" value="50" id="solar">
+
+<label>🌱 Preservação ambiental</label>
+<input type="range" min="0" max="100" value="50" id="verde">
+
+<button onclick="calcularSustentabilidade()">
+Calcular Sustentabilidade
+</button>
+
+<div id="resultadoSimulador"></div>
+
+</div>
+
+</section>
+
+<section class="ia-section">
+
+<h2 class="title">Assistente Agro IA</h2>
+
+<div class="ia-box">
+
+<input type="text" id="perguntaIA" placeholder="Faça uma pergunta...">
+
+<button onclick="responderIA()">
+Perguntar
+</button>
+
+<div id="respostaIA"></div>
+
+</div>
+
+</section>
+
+<section class="dashboard-section">
+
+<h2 class="title">Dashboard Agro</h2>
+
+<div class="dashboard-grid">
+
+<div class="dashboard-card">
+<h3>🌡️ Temperatura</h3>
+<p>18°C</p>
+</div>
+
+<div class="dashboard-card">
+<h3>💧 Umidade</h3>
+<p>82%</p>
+</div>
+
+<div class="dashboard-card">
+<h3>🌱 Sustentabilidade</h3>
+<p>89%</p>
+</div>
+
+<div class="dashboard-card">
+<h3>☀️ Energia Limpa</h3>
+<p>76%</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="monitor-section">
+
+<h2 class="title">Monitor Ambiental</h2>
+
+<div class="monitor-box">
+
+<p>🌧️ Chance de chuva: 40%</p>
+
+<p>🌬️ Qualidade do ar: Boa</p>
+
+<p>🔥 Risco de seca: Baixo</p>
+
+<p>🌎 Emissão de CO₂ reduzida em 68%</p>
+
+</div>
+
+</section>
+
+<div class="modal" id="modal">
+
+<div class="modal-content">
+
+<span class="close" onclick="closeModal()">&times;</span>
+
+<h2 id="modalTitle"></h2>
+
+<p id="modalText"></p>
+
+</div>
+
+</div>
+
+<footer>
+
+<h2>🌱 Agro Forte - Futuro Sustentável</h2>
+
+</footer>
+
+<div vw class="enabled">
+<div vw-access-button class="active"></div>
+<div vw-plugin-wrapper>
+<div class="vw-plugin-top-wrapper"></div>
+</div>
+</div>
+
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+
+<script>
+
+new window.VLibras.Widget('https://vlibras.gov.br/app');
+
+particlesJS('particles-js', {
+
+particles: {
+
+number: {
+value: 80
+},
+
+color: {
+value: '#00ff88'
+},
+
+shape: {
+type: 'circle'
+},
+
+opacity: {
+value: 0.5
+},
+
+size: {
+value: 3
+},
+
+line_linked: {
+enable: true,
+distance: 150,
+color: '#00ff88',
+opacity: 0.4,
+width: 1
+},
+
+move: {
+enable: true,
+speed: 2
+}
+
+}
+
+});
+
+const themeBtn = document.getElementById('themeBtn');
+
+themeBtn.addEventListener('click', () => {
+
+document.body.classList.toggle('light-mode');
+
+});
+
+let zoomLevel = 100;
+
+document.getElementById('zoomIn').addEventListener('click', () => {
+
+zoomLevel += 10;
+
+document.body.style.zoom = zoomLevel + '%';
+
+});
+
+document.getElementById('zoomOut').addEventListener('click', () => {
+
+zoomLevel -= 10;
+
+document.body.style.zoom = zoomLevel + '%';
+
+});
+
+function openModal(type){
+
+const modal = document.getElementById('modal');
+
+const title = document.getElementById('modalTitle');
+
+const text = document.getElementById('modalText');
+
+modal.style.display = 'block';
+
+if(type == 1){
+
+title.innerHTML = '🌾 Irrigação Inteligente';
+
+text.innerHTML =
+'Sensores analisam a umidade do solo e evitam desperdício de água.';
+
+}
+
+if(type == 2){
+
+title.innerHTML = '🚁 Drones Agrícolas';
+
+text.innerHTML =
+'Drones ajudam produtores a monitorar plantações e melhorar a produtividade.';
+
+}
+
+if(type == 3){
+
+title.innerHTML = '☀️ Energia Solar';
+
+text.innerHTML =
+'Painéis solares fornecem energia limpa e reduzem impactos ambientais.';
+
+}
+
+}
+
+function closeModal(){
+
+document.getElementById('modal').style.display = 'none';
+
+}
+
+window.onclick = function(event){
+
+const modal = document.getElementById('modal');
+
+if(event.target == modal){
+
+modal.style.display = 'none';
+
+}
+
+}
+
+navigator.geolocation.getCurrentPosition(async(position) => {
+
+const lat = position.coords.latitude;
+
+const lon = position.coords.longitude;
+
+const apiKey = '3924a0c6fd1f4f713a1f3b29f8f32da8';
+
+try{
+
+const response = await fetch(
+`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&lang=pt_br`
+);
+
+const data = await response.json();
+
+document.querySelector('.weather-box').innerHTML = `
+
+<h3>🌦️ ${data.name}</h3>
+
+<p>🌡️ Temperatura: ${Math.round(data.main.temp)}°C</p>
+
+<p>💧 Umidade: ${data.main.humidity}%</p>
+
+<p>🌬️ Vento: ${data.wind.speed} km/h</p>
+
+`;
+
+}catch(error){
+
+console.log(error);
+
+}
+
+});
+
+function calcularSustentabilidade(){
+
+const agua = Number(document.getElementById('agua').value);
+
+const solar = Number(document.getElementById('solar').value);
+
+const verde = Number(document.getElementById('verde').value);
+
+const media = Math.round((agua + solar + verde) / 3);
+
+let nivel = '';
+
+if(media < 40){
+
+nivel = '❌ Sustentabilidade baixa';
+
+}else if(media < 70){
+
+nivel = '⚠️ Sustentabilidade média';
+
+}else{
+
+nivel = '✅ Sustentabilidade excelente';
+
+}
+
+document.getElementById('resultadoSimulador').innerHTML = `
+
+🌱 Resultado: ${media}%<br><br>
+${nivel}
+
+`;
+
+}
+
+function responderIA(){
+
+const pergunta =
+document.getElementById('perguntaIA').value.toLowerCase();
+
+const resposta =
+document.getElementById('respostaIA');
+
+if(
+pergunta.includes('água') ||
+pergunta.includes('irrigação')
+){
+
+resposta.innerHTML =
+'💧 Sistemas de irrigação inteligente utilizam sensores para economizar água e aumentar a eficiência da produção agrícola.';
+
+}
+
+else if(
+pergunta.includes('energia') ||
+pergunta.includes('solar')
+){
+
+resposta.innerHTML =
+'☀️ A energia solar reduz custos nas fazendas e ajuda a diminuir impactos ambientais.';
+
+}
+
+else if(
+pergunta.includes('solo')
+){
+
+resposta.innerHTML =
+'🌱 O manejo sustentável do solo preserva nutrientes e evita erosão.';
+
+}
+
+else if(
+pergunta.includes('drone') ||
+pergunta.includes('drones')
+){
+
+resposta.innerHTML =
+'🚁 Drones agrícolas ajudam no monitoramento das plantações, identificação de pragas e aumento da produtividade.';
+
+}
+
+else if(
+pergunta.includes('clima')
+){
+
+resposta.innerHTML =
+'🌦️ O monitoramento climático ajuda produtores a prevenir perdas causadas por seca, geada ou excesso de chuva.';
+
+}
+
+else if(
+pergunta.includes('sustentabilidade')
+){
+
+resposta.innerHTML =
+'🌎 Agricultura sustentável busca produzir alimentos preservando água, solo, florestas e reduzindo poluição.';
+
+}
+
+else if(
+pergunta.includes('tecnologia')
+){
+
+resposta.innerHTML =
+'🤖 Tecnologias modernas tornam o agro mais eficiente, produtivo e sustentável.';
+
+}
+
+else if(
+pergunta.includes('produção')
+){
+
+resposta.innerHTML =
+'🌾 A produção agrícola sustentável utiliza inovação para aumentar a produtividade sem prejudicar o meio ambiente.';
+
+}
+
+else if(
+pergunta.includes('meio ambiente')
+){
+
+resposta.innerHTML =
+'🌳 Preservar o meio ambiente é essencial para garantir recursos naturais para as futuras gerações.';
+
+}
+
+else{
+
+resposta.innerHTML =
+'🤖 A agricultura moderna combina tecnologia, sustentabilidade e inovação para produzir alimentos de forma eficiente e responsável.';
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
