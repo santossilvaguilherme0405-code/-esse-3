@@ -390,10 +390,11 @@ modal.style.display = 'none';
 
 }
 
-navigator.geolocation.getCurrentPosition(async(position) => {
+navigator.geolocation.getCurrentPosition(
+
+async(position)=>{
 
 const lat = position.coords.latitude;
-
 const lon = position.coords.longitude;
 
 const apiKey = '3924a0c6fd1f4f713a1f3b29f8f32da8';
@@ -406,26 +407,59 @@ const response = await fetch(
 
 const data = await response.json();
 
+const temp = Math.round(data.main.temp);
+
 document.querySelector('.weather-box').innerHTML = `
 
 <h3>🌦️ ${data.name}</h3>
 
-<p>🌡️ Temperatura: ${Math.round(data.main.temp)}°C</p>
+<p>🌡️ Temperatura: ${temp}°C</p>
 
 <p>💧 Umidade: ${data.main.humidity}%</p>
 
 <p>🌬️ Vento: ${data.wind.speed} km/h</p>
 
+<p>📍 Localização detectada automaticamente</p>
+
 `;
+
+atualizarMonitor(temp);
 
 }catch(error){
 
-console.log(error);
+mostrarClimaPadrao();
 
 }
 
-});
+},
 
+(error)=>{
+
+mostrarClimaPadrao();
+
+}
+
+);
+
+function mostrarClimaPadrao(){
+
+document.querySelector('.weather-box').innerHTML = `
+
+<h3>🌦️ Guarapuava</h3>
+
+<p>🌡️ Temperatura: 18°C</p>
+
+<p>💧 Umidade: 82%</p>
+
+<p>🌬️ Vento: 9 km/h</p>
+
+<p>⚠️ Modo offline ativado</p>
+
+`;
+
+atualizarMonitor(18);
+
+}
 function calcularSustentabilidade(){
 
 const agua = Number(document.getElementById('agua').value);
