@@ -690,21 +690,17 @@ function entrarSite(){
 const intro =
 document.getElementById('intro-screen');
 
-intro.style.transition = '1s';
-
 intro.style.opacity = '0';
 
 intro.style.transform = 'scale(1.1)';
 
-setTimeout(()=>{
+setTimeout(function(){
 
-intro.style.display = 'none';
+intro.remove();
 
-document.body.style.overflowY = 'auto';
+document.body.style.overflow = 'auto';
 
 },1000);
-
-}
 
 }
 
