@@ -662,6 +662,9 @@ color:#111;
 }
 
 #intro-screen{
+
+overflow:hidden;
+transition:1s;
 position:fixed;
 top:0;
 left:0;
