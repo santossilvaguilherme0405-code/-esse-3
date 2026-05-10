@@ -751,3 +751,8 @@ font-size:20px;
 opacity:0;
 transition:1s;
 }
+
+.light-mode .hero-content h1,
+.light-mode .hero-content p{
+color:white !important;
+}
