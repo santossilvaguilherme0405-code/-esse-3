@@ -691,13 +691,17 @@ function entrarSite(){
 const intro =
 document.getElementById('intro-screen');
 
-intro.style.opacity = '0';
+const site =
+document.getElementById('site-content');
 
+intro.style.opacity = '0';
 intro.style.transform = 'scale(1.1)';
 
-setTimeout(function(){
+setTimeout(()=>{
 
 intro.remove();
+
+site.style.opacity = '1';
 
 document.body.style.overflow = 'auto';
 
