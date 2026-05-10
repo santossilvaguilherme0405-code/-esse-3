@@ -329,10 +329,17 @@ color:#111;
 .light-mode .dashboard-card,
 .light-mode .monitor-box,
 .light-mode .simulator-box,
-.light-mode .ia-box{
-background:white;
-color:#111;
-box-shadow:0 0 20px rgba(0,0,0,0.08);
+.light-mode .ia-box,
+.light-mode .modal-content,
+.light-mode .help-card,
+.light-mode .help-contact,
+.light-mode .ia-resposta{
+
+background:#ffffff !important;
+color:#111 !important;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+border:1px solid rgba(0,0,0,0.05);
+
 }
 
 .light-mode .modal-content{
