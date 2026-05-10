@@ -585,20 +585,26 @@ document.getElementById('respostaIA');
 
 if(tipo == 'agua'){
 
-resposta.innerHTML = `
+resposta.innerHTML =
+'texto';
 
-<h3>💧 Economia de Água</h3>
+}
 
-<p>
-A irrigação inteligente utiliza sensores modernos para analisar a umidade do solo e evitar desperdícios. Essa tecnologia ajuda produtores rurais a economizar água, reduzir custos e preservar rios e nascentes.
-</p>
+else if(tipo == 'energia'){
 
-`;
+resposta.innerHTML =
+'texto';
+
+}
+
+else if(tipo == 'solo'){
+
+resposta.innerHTML =
+'texto';
+
+}
 
 setTimeout(() => {
-
-const resposta =
-document.getElementById('respostaIA');
 
 const y =
 resposta.getBoundingClientRect().top +
@@ -610,9 +616,8 @@ behavior:'smooth'
 });
 
 },200);
-    
-}
 
+}
 else if(tipo == 'energia'){
 
 resposta.innerHTML = `
