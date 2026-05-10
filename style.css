@@ -311,8 +311,9 @@ margin-top:50px;
 }
 
 .light-mode{
-background:#eaf7ee;
-color:#111;
+background:#f4fff6 !important;
+color:#111 !important;
+transition:0.4s;
 }
 
 .light-mode header{
