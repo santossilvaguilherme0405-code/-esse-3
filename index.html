@@ -733,15 +733,23 @@ alert(
 
 }
 
-    function entrarSite(){
+function entrarSite(){
 
-document.getElementById('intro-screen').style.opacity = '0';
+const intro = document.getElementById('intro-screen');
+
+intro.style.transition = '1s';
+
+intro.style.opacity = '0';
+
+intro.style.transform = 'scale(1.1)';
 
 setTimeout(()=>{
 
-document.getElementById('intro-screen').style.display = 'none';
+intro.style.display = 'none';
 
-},800);
+document.body.style.overflow = 'auto';
+
+},1000);
 
 }
 
