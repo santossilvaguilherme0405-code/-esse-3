@@ -746,3 +746,8 @@ font-size:20px;
 }
 
 }
+
+#site-content{
+opacity:0;
+transition:1s;
+}
