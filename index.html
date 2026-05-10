@@ -687,7 +687,8 @@ alert(
 
 function entrarSite(){
 
-const intro = document.getElementById('intro-screen');
+const intro =
+document.getElementById('intro-screen');
 
 intro.style.transition = '1s';
 
@@ -699,9 +700,11 @@ setTimeout(()=>{
 
 intro.style.display = 'none';
 
-document.body.style.overflow = 'auto';
+document.body.style.overflowY = 'auto';
 
 },1000);
+
+}
 
 }
 
