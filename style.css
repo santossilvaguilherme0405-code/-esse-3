@@ -9,6 +9,7 @@ body{
 font-family:'Poppins',sans-serif;
 background:#07140b;
 color:white;
+overflow:hidden;
 overflow-x:hidden;
 transition:0.4s;
 }
