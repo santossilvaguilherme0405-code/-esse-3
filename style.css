@@ -777,3 +777,14 @@ display:inline-block;
 display:inline-block;
 margin-top:20px;
 }
+
+.alert-section{
+padding:100px 5%;
+}
+
+#alertaClima{
+font-size:24px;
+line-height:1.8;
+font-weight:bold;
+text-align:center;
+}
