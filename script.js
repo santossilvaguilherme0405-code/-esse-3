@@ -371,6 +371,90 @@ A agricultura sustentável busca equilibrar produção agrícola, preservação 
 
 }
 
+else if(tipo == 'geada'){
+
+resposta.innerHTML = `
+
+<h3>❄️ Alertas de Geada</h3>
+
+<p>
+As geadas podem causar grandes prejuízos agrícolas. O monitoramento climático ajuda produtores a proteger plantações e reduzir perdas no campo.
+</p>
+
+`;
+
+}
+
+  else if(tipo == 'chuva'){
+
+resposta.innerHTML = `
+
+<h3>🌧️ Chuvas Intensas</h3>
+
+<p>
+Chuvas fortes podem causar erosão, alagamentos e prejuízos agrícolas. O planejamento climático é essencial para proteger lavouras.
+</p>
+
+`;
+
+}
+
+  else if(tipo == 'pragas'){
+
+resposta.innerHTML = `
+
+<h3>🐛 Controle de Pragas</h3>
+
+<p>
+Tecnologias modernas ajudam produtores a identificar pragas rapidamente e reduzir danos nas plantações.
+</p>
+
+`;
+
+}
+
+  else if(tipo == 'economia'){
+
+resposta.innerHTML = `
+
+<h3>💰 Economia Rural</h3>
+
+<p>
+A sustentabilidade no campo ajuda produtores a reduzir custos com água, energia e desperdícios agrícolas.
+</p>
+
+`;
+
+}
+
+  else if(tipo == 'sensores'){
+
+resposta.innerHTML = `
+
+<h3>📡 Sensores Inteligentes</h3>
+
+<p>
+Sensores agrícolas monitoram solo, umidade e clima em tempo real, melhorando produtividade e eficiência.
+</p>
+
+`;
+
+}
+
+  else if(tipo == 'carbono'){
+
+resposta.innerHTML = `
+
+<h3>🌳 Redução de Carbono</h3>
+
+<p>
+Práticas sustentáveis ajudam a reduzir emissão de carbono e preservar o meio ambiente para futuras gerações.
+</p>
+
+`;
+
+}
+  
 setTimeout(() => {
 
 const y =
