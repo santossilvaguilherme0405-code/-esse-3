@@ -166,6 +166,12 @@ data.main.humidity + '%';
 document.getElementById('ventoMapa').innerHTML =
 data.wind.speed + ' km/h';
 
+document.getElementById('dashTemp')
+.innerHTML = temp + '°C';
+
+document.getElementById('dashUmidade')
+.innerHTML = data.main.humidity + '%';
+  
 document.getElementById('climaMapa').innerHTML =
 data.weather[0].description;
 
