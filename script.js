@@ -169,6 +169,44 @@ data.wind.speed + ' km/h';
 document.getElementById('climaMapa').innerHTML =
 data.weather[0].description;
 
+  const alerta =
+document.getElementById('alertaClima');
+
+if(temp <= 5){
+
+alerta.innerHTML = `
+❄️ ALERTA DE GEADA:
+Proteja plantações contra frio intenso.
+`;
+
+}
+
+else if(temp >= 35){
+
+alerta.innerHTML = `
+🔥 ALERTA DE CALOR EXTREMO:
+Aumente irrigação e monitore o solo.
+`;
+
+}
+
+else if(data.weather[0].description.includes('chuva')){
+
+alerta.innerHTML = `
+🌧️ ALERTA DE CHUVA:
+Monitore áreas de plantação e drenagem.
+`;
+
+}
+
+else{
+
+alerta.innerHTML = `
+✅ Clima favorável para atividades agrícolas.
+`;
+
+}
+  
 }catch(error){
 
 mostrarClimaPadrao();
