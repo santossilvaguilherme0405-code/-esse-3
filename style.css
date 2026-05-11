@@ -767,3 +767,8 @@ transition:all 1s ease;
 opacity:1;
 transform:translateY(0);
 }
+
+.help-card .btn{
+margin-top:20px;
+display:inline-block;
+}
