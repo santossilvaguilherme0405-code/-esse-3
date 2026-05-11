@@ -772,3 +772,8 @@ transform:translateY(0);
 margin-top:20px;
 display:inline-block;
 }
+
+.help-card .btn{
+display:inline-block;
+margin-top:20px;
+}
