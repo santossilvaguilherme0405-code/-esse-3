@@ -94,390 +94,11 @@ cursor:pointer;
 background:#1f8f3d;
 color:white;
 font-weight:bold;
-}
-
-/* ===============================
-HERO
-=============================== */
-
-.hero{
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:120px 20px;
-
-background:
-linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
-url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600&auto=format&fit=crop');
-
-background-size:cover;
-background-position:center;
-}
-
-.hero-content h1{
-font-size:80px;
-margin-bottom:20px;
-}
-
-.hero-content p{
-font-size:22px;
-margin-bottom:30px;
-}
-
-/* ===============================
-BOTÃO
-=============================== */
-
-.btn{
-display:inline-block;
-padding:18px 35px;
-border-radius:50px;
-background:linear-gradient(45deg,#00ff88,#00c853);
-color:black;
-text-decoration:none;
-font-weight:bold;
 transition:0.3s;
 }
 
-.btn:hover{
+.buttons-nav button:hover{
 transform:scale(1.05);
-}
-
-/* ===============================
-SEÇÕES
-=============================== */
-
-.section,
-.weather-section,
-.map-section,
-.simulator-section,
-.ia-section,
-.help-section,
-.alert-section{
-padding:100px 5%;
-}
-
-.title{
-text-align:center;
-font-size:50px;
-margin-bottom:60px;
-}
-
-/* ===============================
-CARDS
-=============================== */
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
-}
-
-.card{
-background:rgba(255,255,255,0.05);
-border-radius:25px;
-overflow:hidden;
-cursor:pointer;
-transition:0.5s;
-backdrop-filter:blur(10px);
-}
-
-.card:hover{
-transform:translateY(-10px) scale(1.03);
-box-shadow:0 0 25px rgba(0,255,136,0.5);
-}
-
-.card img{
-width:100%;
-height:240px;
-object-fit:cover;
-}
-
-.card h3{
-padding:20px;
-}
-
-.card p{
-padding:0 20px 30px;
-}
-
-/* ===============================
-WEATHER / BOXES
-=============================== */
-
-.weather-box,
-.simulator-box,
-.ia-box,
-.monitor-box{
-background:rgba(255,255,255,0.05);
-padding:40px;
-border-radius:25px;
-text-align:center;
-max-width:800px;
-margin:auto;
-backdrop-filter:blur(10px);
-}
-
-.weather-box h3{
-font-size:35px;
-margin-bottom:20px;
-}
-
-.weather-box p{
-font-size:22px;
-margin:10px 0;
-}
-
-/* ===============================
-MAPA
-=============================== */
-
-.climate-map{
-position:relative;
-border-radius:30px;
-overflow:hidden;
-box-shadow:0 0 40px rgba(0,255,136,0.15);
-}
-
-.climate-map img{
-width:100%;
-height:600px;
-object-fit:cover;
-filter:brightness(0.6);
-}
-
-.map-overlay{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-display:flex;
-justify-content:center;
-align-items:center;
-gap:30px;
-flex-wrap:wrap;
-padding:40px;
-}
-
-.climate-card{
-background:rgba(0,0,0,0.5);
-backdrop-filter:blur(10px);
-padding:30px;
-border-radius:25px;
-font-size:22px;
-text-align:center;
-min-width:220px;
-border:1px solid rgba(255,255,255,0.1);
-transition:0.4s;
-}
-
-.climate-card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 25px rgba(0,255,136,0.5);
-}
-
-.climate-card b{
-font-size:35px;
-color:#00ff88;
-}
-
-/* ===============================
-SIMULADOR
-=============================== */
-
-.simulator-box label{
-display:block;
-margin-top:20px;
-margin-bottom:10px;
-font-size:18px;
-text-align:left;
-}
-
-.simulator-box input{
-width:100%;
-margin-bottom:20px;
-}
-
-.simulator-box button{
-margin-top:20px;
-padding:15px 25px;
-border:none;
-border-radius:15px;
-background:#00c853;
-color:white;
-font-weight:bold;
-cursor:pointer;
-transition:0.3s;
-}
-
-.simulator-box button:hover{
-transform:scale(1.05);
-}
-
-#resultadoSimulador{
-margin-top:30px;
-font-size:20px;
-line-height:1.8;
-}
-
-/* ===============================
-IA SECTION
-=============================== */
-
-.ia-section{
-padding:100px 5%;
-text-align:center;
-}
-
-.ia-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-margin-top:50px;
-margin-bottom:50px;
-}
-
-.ia-grid button{
-padding:22px;
-border:none;
-border-radius:20px;
-background:linear-gradient(45deg,#00ff88,#00c853);
-color:#07140b;
-font-size:18px;
-font-weight:700;
-cursor:pointer;
-transition:0.4s;
-font-family:'Poppins',sans-serif;
-box-shadow:0 0 20px rgba(0,255,136,0.2);
-}
-
-.ia-grid button:hover{
-transform:translateY(-8px) scale(1.03);
-box-shadow:0 0 30px rgba(0,255,136,0.5);
-}
-
-.ia-resposta{
-max-width:1000px;
-margin:auto;
-background:rgba(255,255,255,0.05);
-padding:40px;
-border-radius:30px;
-font-size:20px;
-line-height:1.9;
-backdrop-filter:blur(10px);
-box-shadow:0 0 30px rgba(0,255,136,0.1);
-text-align:left;
-}
-
-.ia-resposta h3{
-font-size:35px;
-margin-bottom:20px;
-color:#00ff88;
-}
-
-/* ===============================
-MODAL
-=============================== */
-
-.modal{
-display:none;
-position:fixed;
-z-index:5000;
-left:0;
-top:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.7);
-backdrop-filter:blur(10px);
-}
-
-.modal-content{
-background:#07140b;
-margin:10% auto;
-padding:40px;
-width:80%;
-max-width:700px;
-border-radius:25px;
-border:2px solid #00ff88;
-}
-
-.close{
-float:right;
-font-size:35px;
-cursor:pointer;
-}
-
-/* ===============================
-HELP SECTION
-=============================== */
-
-.help-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;
-margin-bottom:50px;
-}
-
-.help-card{
-background:rgba(255,255,255,0.05);
-padding:35px;
-border-radius:25px;
-backdrop-filter:blur(10px);
-transition:0.4s;
-}
-
-.help-card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 25px rgba(0,255,136,0.4);
-}
-
-.help-card h3{
-margin-bottom:20px;
-font-size:26px;
-color:#00ff88;
-}
-
-.help-card p{
-font-size:18px;
-line-height:1.8;
-}
-
-.help-contact{
-margin-top:40px;
-text-align:center;
-background:rgba(255,255,255,0.05);
-padding:40px;
-border-radius:30px;
-backdrop-filter:blur(10px);
-}
-
-.help-contact h3{
-font-size:35px;
-margin-bottom:20px;
-}
-
-.help-contact p{
-font-size:20px;
-margin-bottom:30px;
-}
-
-.help-contact button{
-padding:18px 35px;
-border:none;
-border-radius:20px;
-background:linear-gradient(45deg,#00ff88,#00c853);
-font-size:18px;
-font-weight:bold;
-cursor:pointer;
-transition:0.4s;
-}
-
-.help-contact button:hover{
-transform:scale(1.05);
-box-shadow:0 0 25px rgba(0,255,136,0.5);
 }
 
 /* ===============================
@@ -544,6 +165,448 @@ box-shadow:0 0 30px rgba(0,255,136,0.6);
 }
 
 /* ===============================
+SITE ESCONDIDO
+=============================== */
+
+#site-content{
+opacity:0;
+transition:1s;
+}
+
+/* ===============================
+HERO
+=============================== */
+
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:120px 20px;
+
+background:
+linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600&auto=format&fit=crop');
+
+background-size:cover;
+background-position:center;
+}
+
+.hero-content h1{
+font-size:80px;
+margin-bottom:20px;
+color:white;
+}
+
+.hero-content p{
+font-size:22px;
+margin-bottom:30px;
+color:white;
+}
+
+/* ===============================
+BOTÃO
+=============================== */
+
+.btn{
+display:inline-block;
+padding:18px 35px;
+border-radius:50px;
+background:linear-gradient(45deg,#00ff88,#00c853);
+color:black;
+text-decoration:none;
+font-weight:bold;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+/* ===============================
+SEÇÕES
+=============================== */
+
+.section,
+.weather-section,
+.map-section,
+.simulator-section,
+.ia-section,
+.help-section,
+.alert-section{
+padding:100px 5%;
+position:relative;
+z-index:1;
+}
+
+.title{
+text-align:center;
+font-size:50px;
+margin-bottom:60px;
+}
+
+/* ===============================
+CARDS
+=============================== */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+border-radius:25px;
+overflow:hidden;
+cursor:pointer;
+transition:0.5s;
+backdrop-filter:blur(10px);
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.03);
+box-shadow:0 0 25px rgba(0,255,136,0.5);
+}
+
+.card img{
+width:100%;
+height:240px;
+object-fit:cover;
+}
+
+.card h3{
+padding:20px;
+}
+
+.card p{
+padding:0 20px 30px;
+}
+
+/* ===============================
+BOXES
+=============================== */
+
+.weather-box,
+.simulator-box,
+.ia-resposta,
+.help-contact{
+background:rgba(255,255,255,0.05);
+padding:40px;
+border-radius:25px;
+backdrop-filter:blur(10px);
+}
+
+.weather-box{
+max-width:800px;
+margin:auto;
+text-align:center;
+}
+
+.weather-box h3{
+font-size:35px;
+margin-bottom:20px;
+}
+
+.weather-box p{
+font-size:22px;
+margin:10px 0;
+}
+
+/* ===============================
+MAPA
+=============================== */
+
+.climate-map{
+position:relative;
+border-radius:30px;
+overflow:hidden;
+box-shadow:0 0 40px rgba(0,255,136,0.15);
+}
+
+.climate-map img{
+width:100%;
+height:600px;
+object-fit:cover;
+filter:brightness(0.6);
+}
+
+.map-overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+gap:30px;
+flex-wrap:wrap;
+padding:40px;
+}
+
+.climate-card{
+background:rgba(0,0,0,0.5);
+backdrop-filter:blur(10px);
+padding:30px;
+border-radius:25px;
+font-size:22px;
+text-align:center;
+min-width:220px;
+transition:0.4s;
+}
+
+.climate-card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 25px rgba(0,255,136,0.5);
+}
+
+.climate-card b{
+font-size:35px;
+color:#00ff88;
+}
+
+/* ===============================
+SIMULADOR
+=============================== */
+
+.simulator-box{
+max-width:800px;
+margin:auto;
+}
+
+.simulator-box label{
+display:block;
+margin-top:20px;
+margin-bottom:10px;
+font-size:18px;
+}
+
+.simulator-box input{
+width:100%;
+margin-bottom:20px;
+}
+
+.simulator-box button{
+margin-top:20px;
+padding:15px 25px;
+border:none;
+border-radius:15px;
+background:#00c853;
+color:white;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+}
+
+.simulator-box button:hover{
+transform:scale(1.05);
+}
+
+#resultadoSimulador{
+margin-top:30px;
+font-size:20px;
+line-height:1.8;
+}
+
+/* ===============================
+IA
+=============================== */
+
+.ia-section{
+text-align:center;
+}
+
+.ia-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+margin-top:50px;
+margin-bottom:50px;
+}
+
+.ia-grid button{
+padding:22px;
+border:none;
+border-radius:20px;
+background:linear-gradient(45deg,#00ff88,#00c853);
+color:#07140b;
+font-size:18px;
+font-weight:700;
+cursor:pointer;
+transition:0.4s;
+}
+
+.ia-grid button:hover{
+transform:translateY(-8px) scale(1.03);
+box-shadow:0 0 30px rgba(0,255,136,0.5);
+}
+
+.ia-resposta{
+max-width:1000px;
+margin:auto;
+font-size:20px;
+line-height:1.9;
+text-align:left;
+}
+
+.ia-resposta h3{
+font-size:35px;
+margin-bottom:20px;
+color:#00ff88;
+}
+
+/* ===============================
+MODAL
+=============================== */
+
+.modal{
+display:none;
+position:fixed;
+z-index:5000;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+backdrop-filter:blur(10px);
+}
+
+.modal-content{
+background:#07140b;
+margin:10% auto;
+padding:40px;
+width:80%;
+max-width:700px;
+border-radius:25px;
+border:2px solid #00ff88;
+}
+
+.close{
+float:right;
+font-size:35px;
+cursor:pointer;
+}
+
+/* ===============================
+HELP
+=============================== */
+
+.help-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+margin-bottom:50px;
+}
+
+.help-card{
+background:rgba(255,255,255,0.05);
+padding:35px;
+border-radius:25px;
+backdrop-filter:blur(10px);
+transition:0.4s;
+}
+
+.help-card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 25px rgba(0,255,136,0.4);
+}
+
+.help-card h3{
+margin-bottom:20px;
+font-size:26px;
+color:#00ff88;
+}
+
+.help-card p{
+font-size:18px;
+line-height:1.8;
+}
+
+.help-contact{
+margin-top:40px;
+text-align:center;
+}
+
+.help-contact h3{
+font-size:35px;
+margin-bottom:20px;
+}
+
+.help-contact p{
+font-size:20px;
+margin-bottom:30px;
+}
+
+.help-contact button{
+padding:18px 35px;
+border:none;
+border-radius:20px;
+background:linear-gradient(45deg,#00ff88,#00c853);
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+transition:0.4s;
+}
+
+.help-contact button:hover{
+transform:scale(1.05);
+}
+
+/* ===============================
+FOOTER
+=============================== */
+
+footer{
+padding:60px;
+text-align:center;
+background:rgba(0,0,0,0.4);
+margin-top:50px;
+}
+
+/* ===============================
+LIGHT MODE
+=============================== */
+
+.light-mode{
+background:#eaf7ee !important;
+color:#111 !important;
+}
+
+.light-mode header{
+background:rgba(255,255,255,0.85);
+}
+
+.light-mode nav ul li a{
+color:#111;
+}
+
+.light-mode .card,
+.light-mode .weather-box,
+.light-mode .simulator-box,
+.light-mode .modal-content,
+.light-mode .help-card,
+.light-mode .help-contact,
+.light-mode .ia-resposta{
+background:white !important;
+color:#111 !important;
+box-shadow:0 0 20px rgba(0,0,0,0.08);
+}
+
+.light-mode footer{
+background:#d8ecd9;
+color:#111;
+}
+
+/* HERO CONTINUA BRANCA */
+
+.light-mode .hero-content h1,
+.light-mode .hero-content p{
+color:white !important;
+}
+
+/* ===============================
 ANIMAÇÕES
 =============================== */
 
@@ -568,53 +631,6 @@ to{
 opacity:1;
 }
 
-}
-
-/* ===============================
-FOOTER
-=============================== */
-
-footer{
-padding:60px;
-text-align:center;
-background:rgba(0,0,0,0.4);
-margin-top:50px;
-}
-
-/* ===============================
-LIGHT MODE
-=============================== */
-
-.light-mode{
-background:#eaf7ee !important;
-color:#111 !important;
-}
-
-.light-mode header{
-background:rgba(255,255,255,0.85) !important;
-}
-
-.light-mode nav ul li a{
-color:#111 !important;
-}
-
-.light-mode .card,
-.light-mode .weather-box,
-.light-mode .monitor-box,
-.light-mode .simulator-box,
-.light-mode .ia-box,
-.light-mode .modal-content,
-.light-mode .help-card,
-.light-mode .help-contact,
-.light-mode .ia-resposta{
-background:white !important;
-color:#111 !important;
-box-shadow:0 0 20px rgba(0,0,0,0.08);
-}
-
-.light-mode footer{
-background:#d8ecd9 !important;
-color:#111 !important;
 }
 
 /* ===============================
@@ -643,8 +659,7 @@ font-size:35px;
 
 .weather-box,
 .simulator-box,
-.ia-box,
-.monitor-box{
+.ia-resposta{
 padding:25px;
 }
 
