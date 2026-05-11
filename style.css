@@ -788,3 +788,15 @@ line-height:1.8;
 font-weight:bold;
 text-align:center;
 }
+
+.alert-section,
+.dashboard-section,
+.help-section,
+.map-section,
+.simulator-section,
+.ia-section,
+.section,
+.hero{
+position:relative;
+z-index:1;
+}
