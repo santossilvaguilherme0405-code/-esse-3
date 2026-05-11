@@ -1,615 +1,692 @@
-// ===============================
-// VLibrAS
-// ===============================
+// ==========================================
+// INICIALIZAÇÃO DO VLibras
+// ==========================================
 
 new window.VLibras.Widget('https://vlibras.gov.br/app');
 
-// ===============================
-// PARTICLES
-// ===============================
+
+// ==========================================
+// PARTICLES BACKGROUND
+// ==========================================
 
 particlesJS('particles-js', {
-  particles: {
 
-    number: {
-      value: 80
-    },
+particles: {
 
-    color: {
-      value: '#00ff88'
-    },
+number: {
+value: 80
+},
 
-    shape: {
-      type: 'circle'
-    },
+color: {
+value: '#00ff88'
+},
 
-    opacity: {
-      value: 0.5
-    },
+shape: {
+type: 'circle'
+},
 
-    size: {
-      value: 3
-    },
+opacity: {
+value: 0.5
+},
 
-    line_linked: {
-      enable: true,
-      distance: 150,
-      color: '#00ff88',
-      opacity: 0.4,
-      width: 1
-    },
+size: {
+value: 3
+},
 
-    move: {
-      enable: true,
-      speed: 2
-    }
+line_linked: {
+enable: true,
+distance: 150,
+color: '#00ff88',
+opacity: 0.4,
+width: 1
+},
 
-  }
+move: {
+enable: true,
+speed: 2
+}
+
+}
+
 });
 
-// ===============================
-// BOTÃO TEMA
-// ===============================
+
+// ==========================================
+// TEMA CLARO / ESCURO
+// ==========================================
 
 const themeBtn = document.getElementById('themeBtn');
 
 themeBtn.addEventListener('click', () => {
 
-  document.body.classList.toggle('light-mode');
+document.body.classList.toggle('light-mode');
 
 });
 
-// ===============================
-// ZOOM
-// ===============================
+
+// ==========================================
+// ZOOM DA PÁGINA
+// ==========================================
 
 let zoomLevel = 100;
 
 document.getElementById('zoomIn').addEventListener('click', () => {
 
-  zoomLevel += 10;
+zoomLevel += 10;
 
-  document.body.style.zoom = zoomLevel + '%';
+document.body.style.zoom = zoomLevel + '%';
 
 });
 
 document.getElementById('zoomOut').addEventListener('click', () => {
 
-  zoomLevel -= 10;
+zoomLevel -= 10;
 
-  document.body.style.zoom = zoomLevel + '%';
+document.body.style.zoom = zoomLevel + '%';
 
 });
 
-// ===============================
-// MODAL TECNOLOGIAS
-// ===============================
 
-function openModal(type) {
+// ==========================================
+// MODAL DAS TECNOLOGIAS
+// ==========================================
 
-  const modal = document.getElementById('modal');
+function openModal(type){
 
-  const title = document.getElementById('modalTitle');
+const modal = document.getElementById('modal');
 
-  const text = document.getElementById('modalText');
+const title = document.getElementById('modalTitle');
 
-  modal.style.display = 'block';
+const text = document.getElementById('modalText');
 
-  if (type == 1) {
+modal.style.display = 'block';
 
-    title.innerHTML = '🌾 Irrigação Inteligente';
+if(type == 1){
 
-    text.innerHTML =
-      'Sensores analisam a umidade do solo e evitam desperdício de água.';
+title.innerHTML = '🌾 Irrigação Inteligente';
 
-  }
-
-  if (type == 2) {
-
-    title.innerHTML = '🚁 Drones Agrícolas';
-
-    text.innerHTML =
-      'Drones ajudam produtores a monitorar plantações e melhorar a produtividade.';
-
-  }
-
-  if (type == 3) {
-
-    title.innerHTML = '☀️ Energia Solar';
-
-    text.innerHTML =
-      'Painéis solares fornecem energia limpa e reduzem impactos ambientais.';
-
-  }
+text.innerHTML =
+'Sensores analisam a umidade do solo e evitam desperdício de água.';
 
 }
 
-// ===============================
+if(type == 2){
+
+title.innerHTML = '🚁 Drones Agrícolas';
+
+text.innerHTML =
+'Drones ajudam produtores a monitorar plantações e melhorar a produtividade.';
+
+}
+
+if(type == 3){
+
+title.innerHTML = '☀️ Energia Solar';
+
+text.innerHTML =
+'Painéis solares fornecem energia limpa e reduzem impactos ambientais.';
+
+}
+
+}
+
+
+// ==========================================
 // FECHAR MODAL
-// ===============================
+// ==========================================
 
-function closeModal() {
+function closeModal(){
 
-  document.getElementById('modal').style.display = 'none';
+document.getElementById('modal').style.display = 'none';
 
 }
 
-// ===============================
+
+// ==========================================
 // FECHAR MODAL CLICANDO FORA
-// ===============================
+// ==========================================
 
-window.onclick = function (event) {
+window.onclick = function(event){
 
-  const modal = document.getElementById('modal');
+const modal = document.getElementById('modal');
 
-  if (event.target == modal) {
+const helpModal = document.getElementById('helpModal');
 
-    modal.style.display = 'none';
+if(event.target == modal){
 
-  }
+modal.style.display = 'none';
 
 }
 
-// ===============================
-// CLIMA TEMPO REAL
-// ===============================
+if(event.target == helpModal){
+
+helpModal.style.display = 'none';
+
+}
+
+};
+
+
+// ==========================================
+// CLIMA EM TEMPO REAL
+// ==========================================
 
 navigator.geolocation.getCurrentPosition(
 
-  async (position) => {
+async(position)=>{
 
-    const lat = position.coords.latitude;
+const lat = position.coords.latitude;
 
-    const lon = position.coords.longitude;
+const lon = position.coords.longitude;
 
-    const apiKey = '3924a0c6fd1f4f713a1f3b29f8f32da8';
+const apiKey = '3924a0c6fd1f4f713a1f3b29f8f32da8';
 
-    try {
+try{
 
-      const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&lang=pt_br`
-      );
+const response = await fetch(
 
-      const data = await response.json();
-
-      const temp = Math.round(data.main.temp);
-
-      document.querySelector('.weather-box').innerHTML = `
-
-      <h3>🌦️ ${data.name}</h3>
-
-      <p>🌡️ Temperatura: ${temp}°C</p>
-
-      <p>💧 Umidade: ${data.main.humidity}%</p>
-
-      <p>🌬️ Vento: ${data.wind.speed} km/h</p>
-
-      <p>📍 Localização detectada automaticamente</p>
-
-      `;
-
-      document.getElementById('tempMapa').innerHTML =
-        temp + '°C';
-
-      document.getElementById('umidadeMapa').innerHTML =
-        data.main.humidity + '%';
-
-      document.getElementById('ventoMapa').innerHTML =
-        data.wind.speed + ' km/h';
-
-      document.getElementById('climaMapa').innerHTML =
-        data.weather[0].description;
-
-      const alerta =
-        document.getElementById('alertaClima');
-
-      // ALERTAS
-
-      if (temp <= 5) {
-
-        alerta.innerHTML = `
-        ❄️ ALERTA DE GEADA:
-        Proteja plantações contra frio intenso.
-        `;
-
-      }
-
-      else if (temp >= 35) {
-
-        alerta.innerHTML = `
-        🔥 ALERTA DE CALOR EXTREMO:
-        Aumente irrigação e monitore o solo.
-        `;
-
-      }
-
-      else if (data.weather[0].description.includes('chuva')) {
-
-        alerta.innerHTML = `
-        🌧️ ALERTA DE CHUVA:
-        Monitore áreas de plantação e drenagem.
-        `;
-
-      }
-
-      else {
-
-        alerta.innerHTML = `
-        ✅ Clima favorável para atividades agrícolas.
-        `;
-
-      }
-
-    }
-
-    catch (error) {
-
-      mostrarClimaPadrao();
-
-    }
-
-  },
-
-  (error) => {
-
-    mostrarClimaPadrao();
-
-  }
+`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&lang=pt_br`
 
 );
 
-// ===============================
-// CLIMA PADRÃO
-// ===============================
+const data = await response.json();
 
-function mostrarClimaPadrao() {
+const temp = Math.round(data.main.temp);
 
-  document.querySelector('.weather-box').innerHTML = `
 
-  <h3>🌦️ Guarapuava</h3>
+// ==========================================
+// CLIMA PRINCIPAL
+// ==========================================
 
-  <p>🌡️ Temperatura: 18°C</p>
+document.querySelector('.weather-box').innerHTML = `
 
-  <p>💧 Umidade: 82%</p>
+<h3>🌦️ ${data.name}</h3>
 
-  <p>🌬️ Vento: 9 km/h</p>
+<p>🌡️ Temperatura: ${temp}°C</p>
 
-  <p>⚠️ Modo offline ativado</p>
+<p>💧 Umidade: ${data.main.humidity}%</p>
 
-  `;
+<p>🌬️ Vento: ${data.wind.speed} km/h</p>
 
-}
+<p>📍 Localização detectada automaticamente</p>
 
-// ===============================
-// SIMULADOR
-// ===============================
+`;
 
-function calcularSustentabilidade() {
 
-  const agua =
-    Number(document.getElementById('agua').value);
+// ==========================================
+// CARDS DO MAPA
+// ==========================================
 
-  const solar =
-    Number(document.getElementById('solar').value);
+document.getElementById('tempMapa').innerHTML =
+temp + '°C';
 
-  const verde =
-    Number(document.getElementById('verde').value);
+document.getElementById('umidadeMapa').innerHTML =
+data.main.humidity + '%';
 
-  const media =
-    Math.round((agua + solar + verde) / 3);
+document.getElementById('ventoMapa').innerHTML =
+data.wind.speed + ' km/h';
 
-  let nivel = '';
+document.getElementById('climaMapa').innerHTML =
+data.weather[0].description;
 
-  if (media < 40) {
 
-    nivel = '❌ Sustentabilidade baixa';
+// ==========================================
+// ALERTAS CLIMÁTICOS
+// ==========================================
 
-  }
+const alerta =
+document.getElementById('alertaClima');
 
-  else if (media < 70) {
+if(temp <= 5){
 
-    nivel = '⚠️ Sustentabilidade média';
-
-  }
-
-  else {
-
-    nivel = '✅ Sustentabilidade excelente';
-
-  }
-
-  document.getElementById('resultadoSimulador').innerHTML = `
-
-  🌱 Resultado: ${media}%<br><br>
-
-  ${nivel}
-
-  `;
+alerta.innerHTML = `
+❄️ ALERTA DE GEADA:
+Proteja plantações contra frio intenso.
+`;
 
 }
 
-// ===============================
+else if(temp >= 35){
+
+alerta.innerHTML = `
+🔥 ALERTA DE CALOR EXTREMO:
+Aumente irrigação e monitore o solo.
+`;
+
+}
+
+else if(data.weather[0].description.includes('chuva')){
+
+alerta.innerHTML = `
+🌧️ ALERTA DE CHUVA:
+Monitore áreas de plantação e drenagem.
+`;
+
+}
+
+else{
+
+alerta.innerHTML = `
+✅ Clima favorável para atividades agrícolas.
+`;
+
+}
+
+}catch(error){
+
+mostrarClimaPadrao();
+
+}
+
+},
+
+(error)=>{
+
+mostrarClimaPadrao();
+
+}
+
+);
+
+
+// ==========================================
+// CLIMA PADRÃO OFFLINE
+// ==========================================
+
+function mostrarClimaPadrao(){
+
+document.querySelector('.weather-box').innerHTML = `
+
+<h3>🌦️ Guarapuava</h3>
+
+<p>🌡️ Temperatura: 18°C</p>
+
+<p>💧 Umidade: 82%</p>
+
+<p>🌬️ Vento: 9 km/h</p>
+
+<p>⚠️ Modo offline ativado</p>
+
+`;
+
+}
+
+
+// ==========================================
+// SIMULADOR DE SUSTENTABILIDADE
+// ==========================================
+
+function calcularSustentabilidade(){
+
+const agua =
+Number(document.getElementById('agua').value);
+
+const solar =
+Number(document.getElementById('solar').value);
+
+const verde =
+Number(document.getElementById('verde').value);
+
+const media =
+Math.round((agua + solar + verde) / 3);
+
+let nivel = '';
+
+if(media < 40){
+
+nivel = '❌ Sustentabilidade baixa';
+
+}
+
+else if(media < 70){
+
+nivel = '⚠️ Sustentabilidade média';
+
+}
+
+else{
+
+nivel = '✅ Sustentabilidade excelente';
+
+}
+
+document.getElementById('resultadoSimulador').innerHTML = `
+
+🌱 Resultado: ${media}%<br><br>
+
+${nivel}
+
+`;
+
+}
+
+
+// ==========================================
 // CENTRAL EDUCACIONAL
-// ===============================
+// ==========================================
 
-function mostrarInfo(tipo) {
+function mostrarInfo(tipo){
 
-  const resposta =
-    document.getElementById('respostaIA');
+const resposta =
+document.getElementById('respostaIA');
 
-  // ÁGUA
 
-  if (tipo == 'agua') {
+// ==========================================
+// ECONOMIA DE ÁGUA
+// ==========================================
 
-    resposta.innerHTML = `
+if(tipo == 'agua'){
 
-    <h3>💧 Economia de Água</h3>
+resposta.innerHTML = `
 
-    <p>
-    A irrigação inteligente utiliza sensores modernos para analisar a umidade do solo e evitar desperdícios.
-    </p>
+<h3>💧 Economia de Água</h3>
 
-    `;
+<p>
+A irrigação inteligente utiliza sensores modernos para analisar a umidade do solo e evitar desperdícios.
+</p>
 
-  }
-
-  // ENERGIA
-
-  else if (tipo == 'energia') {
-
-    resposta.innerHTML = `
-
-    <h3>☀️ Energia Solar</h3>
-
-    <p>
-    A energia solar é uma alternativa limpa e renovável muito importante para o agro sustentável.
-    </p>
-
-    `;
-
-  }
-
-  // DRONES
-
-  else if (tipo == 'drones') {
-
-    resposta.innerHTML = `
-
-    <h3>🚁 Drones Agrícolas</h3>
-
-    <p>
-    Os drones agrícolas ajudam no monitoramento das plantações.
-    </p>
-
-    `;
-
-  }
-
-  // SOLO
-
-  else if (tipo == 'solo') {
-
-    resposta.innerHTML = `
-
-    <h3>🌱 Preservação do Solo</h3>
-
-    <p>
-    Técnicas sustentáveis evitam erosão e preservam nutrientes.
-    </p>
-
-    `;
-
-  }
-
-  // CLIMA
-
-  else if (tipo == 'clima') {
-
-    resposta.innerHTML = `
-
-    <h3>🌦️ Mudanças Climáticas</h3>
-
-    <p>
-    Secas, geadas e chuvas intensas podem prejudicar plantações.
-    </p>
-
-    `;
-
-  }
-
-  // SUSTENTABILIDADE
-
-  else if (tipo == 'sustentabilidade') {
-
-    resposta.innerHTML = `
-
-    <h3>🌎 Sustentabilidade</h3>
-
-    <p>
-    A agricultura sustentável busca equilíbrio entre produção e meio ambiente.
-    </p>
-
-    `;
-
-  }
-
-  // GEADA
-
-  else if (tipo == 'geada') {
-
-    resposta.innerHTML = `
-
-    <h3>❄️ Alertas de Geada</h3>
-
-    <p>
-    O monitoramento climático ajuda produtores a proteger plantações.
-    </p>
-
-    `;
-
-  }
-
-  // CHUVA
-
-  else if (tipo == 'chuva') {
-
-    resposta.innerHTML = `
-
-    <h3>🌧️ Chuvas Intensas</h3>
-
-    <p>
-    Chuvas fortes podem causar erosão e prejuízos agrícolas.
-    </p>
-
-    `;
-
-  }
-
-  // PRAGAS
-
-  else if (tipo == 'pragas') {
-
-    resposta.innerHTML = `
-
-    <h3>🐛 Controle de Pragas</h3>
-
-    <p>
-    Tecnologias modernas ajudam produtores a identificar pragas rapidamente.
-    </p>
-
-    `;
-
-  }
-
-  // ECONOMIA
-
-  else if (tipo == 'economia') {
-
-    resposta.innerHTML = `
-
-    <h3>💰 Economia Rural</h3>
-
-    <p>
-    A sustentabilidade reduz custos e desperdícios agrícolas.
-    </p>
-
-    `;
-
-  }
-
-  // SENSORES
-
-  else if (tipo == 'sensores') {
-
-    resposta.innerHTML = `
-
-    <h3>📡 Sensores Inteligentes</h3>
-
-    <p>
-    Sensores agrícolas monitoram solo, umidade e clima em tempo real.
-    </p>
-
-    `;
-
-  }
-
-  // CARBONO
-
-  else if (tipo == 'carbono') {
-
-    resposta.innerHTML = `
-
-    <h3>🌳 Redução de Carbono</h3>
-
-    <p>
-    Práticas sustentáveis ajudam a reduzir emissão de carbono.
-    </p>
-
-    `;
-
-  }
-
-  // SCROLL SUAVE
-
-  setTimeout(() => {
-
-    const y =
-      resposta.getBoundingClientRect().top +
-      window.pageYOffset - 120;
-
-    window.scrollTo({
-      top: y,
-      behavior: 'smooth'
-    });
-
-  }, 200);
+`;
 
 }
 
-// ===============================
-// CENTRAL DE AJUDA
-// ===============================
 
-function abrirAjuda() {
+// ==========================================
+// ENERGIA SOLAR
+// ==========================================
 
-  document.getElementById('helpModal')
-    .style.display = 'block';
+else if(tipo == 'energia'){
 
-}
+resposta.innerHTML = `
 
-function fecharAjuda() {
+<h3>☀️ Energia Solar</h3>
 
-  document.getElementById('helpModal')
-    .style.display = 'none';
+<p>
+A energia solar é uma alternativa limpa e renovável muito importante para o agro sustentável.
+</p>
 
-}
-
-// ===============================
-// INTRO
-// ===============================
-
-function entrarSite() {
-
-  const intro =
-    document.getElementById('intro-screen');
-
-  const site =
-    document.getElementById('site-content');
-
-  intro.style.opacity = '0';
-
-  intro.style.transform = 'scale(1.1)';
-
-  setTimeout(() => {
-
-    intro.remove();
-
-    site.style.opacity = '1';
-
-    document.body.style.overflow = 'auto';
-
-  }, 1000);
+`;
 
 }
 
-// ===============================
-// ANIMAÇÕES
-// ===============================
+
+// ==========================================
+// DRONES
+// ==========================================
+
+else if(tipo == 'drones'){
+
+resposta.innerHTML = `
+
+<h3>🚁 Drones Agrícolas</h3>
+
+<p>
+Os drones agrícolas ajudam no monitoramento das plantações e identificação de pragas.
+</p>
+
+`;
+
+}
+
+
+// ==========================================
+// SOLO
+// ==========================================
+
+else if(tipo == 'solo'){
+
+resposta.innerHTML = `
+
+<h3>🌱 Preservação do Solo</h3>
+
+<p>
+Técnicas sustentáveis evitam erosão e mantêm nutrientes importantes.
+</p>
+
+`;
+
+}
+
+
+// ==========================================
+// CLIMA
+// ==========================================
+
+else if(tipo == 'clima'){
+
+resposta.innerHTML = `
+
+<h3>🌦️ Mudanças Climáticas</h3>
+
+<p>
+Secas, geadas e chuvas intensas afetam diretamente a agricultura.
+</p>
+
+`;
+
+}
+
+
+// ==========================================
+// SUSTENTABILIDADE
+// ==========================================
+
+else if(tipo == 'sustentabilidade'){
+
+resposta.innerHTML = `
+
+<h3>🌎 Sustentabilidade</h3>
+
+<p>
+A agricultura sustentável busca equilibrar produção e preservação ambiental.
+</p>
+
+`;
+
+}
+
+
+// ==========================================
+// GEADA
+// ==========================================
+
+else if(tipo == 'geada'){
+
+resposta.innerHTML = `
+
+<h3>❄️ Alertas de Geada</h3>
+
+<p>
+O monitoramento climático ajuda produtores a proteger plantações.
+</p>
+
+`;
+
+}
+
+
+// ==========================================
+// CHUVAS
+// ==========================================
+
+else if(tipo == 'chuva'){
+
+resposta.innerHTML = `
+
+<h3>🌧️ Chuvas Intensas</h3>
+
+<p>
+Chuvas fortes podem causar erosão e prejuízos agrícolas.
+</p>
+
+`;
+
+}
+
+
+// ==========================================
+// PRAGAS
+// ==========================================
+
+else if(tipo == 'pragas'){
+
+resposta.innerHTML = `
+
+<h3>🐛 Controle de Pragas</h3>
+
+<p>
+Tecnologias modernas ajudam produtores a identificar pragas rapidamente.
+</p>
+
+`;
+
+}
+
+
+// ==========================================
+// ECONOMIA
+// ==========================================
+
+else if(tipo == 'economia'){
+
+resposta.innerHTML = `
+
+<h3>💰 Economia Rural</h3>
+
+<p>
+A sustentabilidade ajuda produtores a reduzir custos.
+</p>
+
+`;
+
+}
+
+
+// ==========================================
+// SENSORES
+// ==========================================
+
+else if(tipo == 'sensores'){
+
+resposta.innerHTML = `
+
+<h3>📡 Sensores Inteligentes</h3>
+
+<p>
+Sensores monitoram solo, umidade e clima em tempo real.
+</p>
+
+`;
+
+}
+
+
+// ==========================================
+// CARBONO
+// ==========================================
+
+else if(tipo == 'carbono'){
+
+resposta.innerHTML = `
+
+<h3>🌳 Redução de Carbono</h3>
+
+<p>
+Práticas sustentáveis ajudam a reduzir emissão de carbono.
+</p>
+
+`;
+
+}
+
+
+// ==========================================
+// SCROLL AUTOMÁTICO
+// ==========================================
+
+setTimeout(() => {
+
+const y =
+resposta.getBoundingClientRect().top +
+window.pageYOffset - 120;
+
+window.scrollTo({
+
+top:y,
+behavior:'smooth'
+
+});
+
+},200);
+
+}
+
+
+// ==========================================
+// MODAL DE AJUDA
+// ==========================================
+
+function abrirAjuda(){
+
+document.getElementById('helpModal')
+.style.display = 'block';
+
+}
+
+function fecharAjuda(){
+
+document.getElementById('helpModal')
+.style.display = 'none';
+
+}
+
+
+// ==========================================
+// TELA DE ENTRADA
+// ==========================================
+
+function entrarSite(){
+
+const intro =
+document.getElementById('intro-screen');
+
+const site =
+document.getElementById('site-content');
+
+intro.style.opacity = '0';
+
+intro.style.transform = 'scale(1.1)';
+
+setTimeout(()=>{
+
+intro.style.display = 'none';
+
+site.style.opacity = '1';
+
+document.body.style.overflow = 'auto';
+
+},1000);
+
+}
+
+
+// ==========================================
+// ANIMAÇÕES AO ROLAR
+// ==========================================
 
 const observer =
-  new IntersectionObserver((entries) => {
+new IntersectionObserver((entries)=>{
 
-    entries.forEach((entry) => {
+entries.forEach((entry)=>{
 
-      if (entry.isIntersecting) {
+if(entry.isIntersecting){
 
-        entry.target.classList.add('show');
+entry.target.classList.add('show');
 
-      }
+}
 
-    });
+});
 
-  });
+});
 
 document.querySelectorAll('.hidden')
-  .forEach((el) => observer.observe(el));
+.forEach((el)=>observer.observe(el));
