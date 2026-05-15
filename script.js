@@ -256,6 +256,10 @@ alerta.innerHTML = `
 Proteja plantações contra frio intenso.
 `;
 
+document.getElementById('dashboardAlert')
+.innerHTML =
+'❄️ Risco de geada detectado.';
+
 }
 
 else if(temp >= 35){
@@ -264,6 +268,10 @@ alerta.innerHTML = `
 🔥 ALERTA DE CALOR EXTREMO:
 Aumente irrigação e monitore o solo.
 `;
+
+document.getElementById('dashboardAlert')
+.innerHTML =
+'🔥 Temperatura muito alta.';
 
 }
 
@@ -274,6 +282,10 @@ alerta.innerHTML = `
 Monitore áreas de plantação e drenagem.
 `;
 
+document.getElementById('dashboardAlert')
+.innerHTML =
+'🌧️ Chuvas intensas previstas.';
+
 }
 
 else{
@@ -281,6 +293,10 @@ else{
 alerta.innerHTML = `
 ✅ Clima favorável para atividades agrícolas.
 `;
+
+document.getElementById('dashboardAlert')
+.innerHTML =
+'✅ Clima favorável.';
 
 }
 
