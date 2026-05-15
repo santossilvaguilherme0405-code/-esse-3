@@ -9,6 +9,7 @@ box-sizing:border-box;
 scroll-behavior:smooth;
 }
 
+
 /* ===============================
 BODY
 =============================== */
@@ -20,6 +21,7 @@ color:white;
 overflow:hidden;
 transition:0.4s;
 }
+
 
 /* ===============================
 PARTÍCULAS
@@ -34,6 +36,7 @@ height:100%;
 z-index:-2;
 pointer-events:none;
 }
+
 
 /* ===============================
 HEADER
@@ -77,6 +80,7 @@ nav ul li a:hover{
 color:#00ff88;
 }
 
+
 /* ===============================
 BOTÕES NAV
 =============================== */
@@ -100,6 +104,7 @@ transition:0.3s;
 .buttons-nav button:hover{
 transform:scale(1.05);
 }
+
 
 /* ===============================
 INTRO SCREEN
@@ -164,6 +169,7 @@ transform:scale(1.08);
 box-shadow:0 0 30px rgba(0,255,136,0.6);
 }
 
+
 /* ===============================
 SITE ESCONDIDO
 =============================== */
@@ -172,6 +178,7 @@ SITE ESCONDIDO
 opacity:0;
 transition:1s;
 }
+
 
 /* ===============================
 HERO
@@ -182,6 +189,7 @@ min-height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
+flex-direction:column;
 text-align:center;
 padding:120px 20px;
 
@@ -205,6 +213,7 @@ margin-bottom:30px;
 color:white;
 }
 
+
 /* ===============================
 BOTÃO
 =============================== */
@@ -223,6 +232,7 @@ transition:0.3s;
 .btn:hover{
 transform:scale(1.05);
 }
+
 
 /* ===============================
 SEÇÕES
@@ -245,6 +255,7 @@ text-align:center;
 font-size:50px;
 margin-bottom:60px;
 }
+
 
 /* ===============================
 CARDS
@@ -284,6 +295,7 @@ padding:20px;
 padding:0 20px 30px;
 }
 
+
 /* ===============================
 BOXES
 =============================== */
@@ -313,6 +325,7 @@ margin-bottom:20px;
 font-size:22px;
 margin:10px 0;
 }
+
 
 /* ===============================
 MAPA
@@ -367,6 +380,7 @@ font-size:35px;
 color:#00ff88;
 }
 
+
 /* ===============================
 SIMULADOR
 =============================== */
@@ -409,6 +423,7 @@ margin-top:30px;
 font-size:20px;
 line-height:1.8;
 }
+
 
 /* ===============================
 IA
@@ -457,6 +472,7 @@ margin-bottom:20px;
 color:#00ff88;
 }
 
+
 /* ===============================
 MODAL
 =============================== */
@@ -488,6 +504,7 @@ float:right;
 font-size:35px;
 cursor:pointer;
 }
+
 
 /* ===============================
 HELP
@@ -554,6 +571,7 @@ transition:0.4s;
 transform:scale(1.05);
 }
 
+
 /* ===============================
 FOOTER
 =============================== */
@@ -565,8 +583,9 @@ background:rgba(0,0,0,0.4);
 margin-top:50px;
 }
 
+
 /* ===============================
-MODo CLARO/ESCURO
+MODO CLARO
 =============================== */
 
 .light-mode{
@@ -588,7 +607,8 @@ color:#111;
 .light-mode .modal-content,
 .light-mode .help-card,
 .light-mode .help-contact,
-.light-mode .ia-resposta{
+.light-mode .ia-resposta,
+.light-mode .dashboard-card{
 background:white !important;
 color:#111 !important;
 box-shadow:0 0 20px rgba(0,0,0,0.08);
@@ -599,12 +619,13 @@ background:#d8ecd9;
 color:#111;
 }
 
-/* HERO CONTINUA BRANCA */
+/* HERO CONTINUA BRANCO */
 
 .light-mode .hero-content h1,
 .light-mode .hero-content p{
 color:white !important;
 }
+
 
 /* ===============================
 ANIMAÇÕES
@@ -633,6 +654,7 @@ opacity:1;
 
 }
 
+
 /* ===============================
 RESPONSIVO
 =============================== */
@@ -645,6 +667,11 @@ gap:20px;
 }
 
 nav ul{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.buttons-nav{
 flex-wrap:wrap;
 justify-content:center;
 }
@@ -681,9 +708,10 @@ flex-direction:column;
 
 }
 
-/* ===================================== */
-/* DASHBOARD MELHORADO*/
-/* ===================================== */
+
+/* ===============================
+DASHBOARD
+=============================== */
 
 .hero-dashboard{
 
@@ -703,6 +731,8 @@ max-width:1200px;
 }
 
 .dashboard-card{
+
+width:100%;
 
 background:rgba(255,255,255,0.08);
 
@@ -770,7 +800,10 @@ line-height:1.6;
 
 }
 
-/* RESPONSIVO */
+
+/* ===============================
+RESPONSIVO DASHBOARD
+=============================== */
 
 @media(max-width:768px){
 
