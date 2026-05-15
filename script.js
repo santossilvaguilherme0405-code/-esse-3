@@ -4,7 +4,9 @@
 
 window.onload = () => {
 
-new window.VLibras.Widget('https://vlibras.gov.br/app');
+    new window.VLibras.Widget(
+        'https://vlibras.gov.br/app'
+    );
 
 };
 
@@ -15,42 +17,42 @@ new window.VLibras.Widget('https://vlibras.gov.br/app');
 
 particlesJS('particles-js', {
 
-particles: {
+    particles: {
 
-number: {
-value: 80
-},
+        number: {
+            value: 80
+        },
 
-color: {
-value: '#00ff88'
-},
+        color: {
+            value: '#00ff88'
+        },
 
-shape: {
-type: 'circle'
-},
+        shape: {
+            type: 'circle'
+        },
 
-opacity: {
-value: 0.5
-},
+        opacity: {
+            value: 0.5
+        },
 
-size: {
-value: 3
-},
+        size: {
+            value: 3
+        },
 
-line_linked: {
-enable: true,
-distance: 150,
-color: '#00ff88',
-opacity: 0.4,
-width: 1
-},
+        line_linked: {
+            enable: true,
+            distance: 150,
+            color: '#00ff88',
+            opacity: 0.4,
+            width: 1
+        },
 
-move: {
-enable: true,
-speed: 2
-}
+        move: {
+            enable: true,
+            speed: 2
+        }
 
-}
+    }
 
 });
 
@@ -64,7 +66,9 @@ document.getElementById('themeBtn');
 
 themeBtn.addEventListener('click', () => {
 
-document.body.classList.toggle('light-mode');
+    document.body.classList.toggle(
+        'light-mode'
+    );
 
 });
 
@@ -78,79 +82,79 @@ let zoomLevel = 100;
 document.getElementById('zoomIn')
 .addEventListener('click', () => {
 
-zoomLevel += 10;
+    zoomLevel += 10;
 
-document.body.style.zoom =
-zoomLevel + '%';
+    document.body.style.zoom =
+    zoomLevel + '%';
 
 });
 
 document.getElementById('zoomOut')
 .addEventListener('click', () => {
 
-zoomLevel -= 10;
+    zoomLevel -= 10;
 
-document.body.style.zoom =
-zoomLevel + '%';
+    document.body.style.zoom =
+    zoomLevel + '%';
 
 });
 
 
 // ================================
-// ABRIR MODAL
+// MODAL DAS TECNOLOGIAS
 // ================================
 
 function openModal(type){
 
-const modal =
-document.getElementById('modal');
+    const modal =
+    document.getElementById('modal');
 
-const title =
-document.getElementById('modalTitle');
+    const title =
+    document.getElementById('modalTitle');
 
-const text =
-document.getElementById('modalText');
+    const text =
+    document.getElementById('modalText');
 
-modal.style.display = 'block';
-
-
-// Irrigação
-
-if(type == 1){
-
-title.innerHTML =
-'🌾 Irrigação Inteligente';
-
-text.innerHTML =
-'Sensores analisam a umidade do solo e ajudam a economizar água.';
-
-}
+    modal.style.display = 'block';
 
 
-// Drones
+    // Irrigação
 
-if(type == 2){
+    if(type == 1){
 
-title.innerHTML =
-'🚁 Drones Agrícolas';
+        title.innerHTML =
+        '🌾 Irrigação Inteligente';
 
-text.innerHTML =
-'Drones ajudam produtores a monitorar plantações e identificar problemas rapidamente.';
+        text.innerHTML =
+        'Sensores analisam o solo e ajudam a economizar água na plantação.';
 
-}
+    }
 
 
-// Energia Solar
+    // Drones
 
-if(type == 3){
+    else if(type == 2){
 
-title.innerHTML =
-'☀️ Energia Solar';
+        title.innerHTML =
+        '🚁 Drones Agrícolas';
 
-text.innerHTML =
-'Painéis solares fornecem energia limpa para propriedades rurais.';
+        text.innerHTML =
+        'Drones ajudam produtores a monitorar plantações e identificar problemas rapidamente.';
 
-}
+    }
+
+
+    // Energia solar
+
+    else if(type == 3){
+
+        title.innerHTML =
+        '☀️ Energia Solar';
+
+        text.innerHTML =
+        'Painéis solares produzem energia limpa para fazendas e propriedades rurais.';
+
+    }
 
 }
 
@@ -161,8 +165,8 @@ text.innerHTML =
 
 function closeModal(){
 
-document.getElementById('modal')
-.style.display = 'none';
+    document.getElementById('modal')
+    .style.display = 'none';
 
 }
 
@@ -173,23 +177,14 @@ document.getElementById('modal')
 
 window.onclick = function(event){
 
-const modal =
-document.getElementById('modal');
+    const modal =
+    document.getElementById('modal');
 
-const helpModal =
-document.getElementById('helpModal');
+    if(event.target == modal){
 
-if(event.target == modal){
+        modal.style.display = 'none';
 
-modal.style.display = 'none';
-
-}
-
-if(event.target == helpModal){
-
-helpModal.style.display = 'none';
-
-}
+    }
 
 };
 
@@ -200,193 +195,180 @@ helpModal.style.display = 'none';
 
 navigator.geolocation.getCurrentPosition(
 
-async(position)=>{
+    async(position)=>{
 
-const lat = position.coords.latitude;
+        const lat =
+        position.coords.latitude;
 
-const lon = position.coords.longitude;
+        const lon =
+        position.coords.longitude;
 
-const apiKey =
-'3924a0c6fd1f4f713a1f3b29f8f32da8';
+        const apiKey =
+        '3924a0c6fd1f4f713a1f3b29f8f32da8';
 
-try{
+        try{
 
-const response = await fetch(
+            const response =
+            await fetch(
 
 `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&lang=pt_br`
 
-);
+            );
 
-const data = await response.json();
+            const data =
+            await response.json();
 
-const temp =
-Math.round(data.main.temp);
-
-
-// ================================
-// BOX DO CLIMA
-// ================================
-
-document.querySelector('.weather-box')
-.innerHTML = `
-
-<h3>🌦️ ${data.name}</h3>
-
-<p>🌡️ Temperatura: ${temp}°C</p>
-
-<p>💧 Umidade: ${data.main.humidity}%</p>
-
-<p>🌬️ Vento: ${data.wind.speed} km/h</p>
-
-<p>📍 Localização detectada automaticamente</p>
-
-`;
+            const temp =
+            Math.round(data.main.temp);
 
 
-// ================================
-// MAPA CLIMÁTICO
-// ================================
+            // ================================
+            // MAPA CLIMÁTICO
+            // ================================
 
-document.getElementById('tempMapa')
-.innerHTML = temp + '°C';
+            document.getElementById('tempMapa')
+            .innerHTML = temp + '°C';
 
-document.getElementById('umidadeMapa')
-.innerHTML =
-data.main.humidity + '%';
+            document.getElementById('umidadeMapa')
+            .innerHTML =
+            data.main.humidity + '%';
 
-document.getElementById('ventoMapa')
-.innerHTML =
-data.wind.speed + ' km/h';
+            document.getElementById('ventoMapa')
+            .innerHTML =
+            data.wind.speed + ' km/h';
 
-document.getElementById('climaMapa')
-.innerHTML =
-data.weather[0].description;
-
-
-// ================================
-// DASHBOARD
-// ================================
-
-document.getElementById('dashboardTemp')
-.innerHTML = temp + '°C';
-
-document.getElementById('dashboardHumidity')
-.innerHTML =
-data.main.humidity + '%';
-
-document.getElementById('dashboardWind')
-.innerHTML =
-data.wind.speed + ' km/h';
+            document.getElementById('climaMapa')
+            .innerHTML =
+            data.weather[0].description;
 
 
-// ================================
-// ALERTAS
-// ================================
+            // ================================
+            // DASHBOARD
+            // ================================
 
-const alerta =
-document.getElementById('alertaClima');
+            document.getElementById('dashboardTemp')
+            .innerHTML = temp + '°C';
 
-const dashboardAlert =
-document.getElementById('dashboardAlert');
+            document.getElementById('dashboardHumidity')
+            .innerHTML =
+            data.main.humidity + '%';
 
-
-// Geada
-
-if(temp <= 5){
-
-alerta.innerHTML = `
-❄️ ALERTA DE GEADA:
-Proteja plantações contra frio intenso.
-`;
-
-dashboardAlert.innerHTML =
-'❄️ Risco de geada detectado';
-
-}
+            document.getElementById('dashboardWind')
+            .innerHTML =
+            data.wind.speed + ' km/h';
 
 
-// Calor
+            // ================================
+            // ALERTAS
+            // ================================
 
-else if(temp >= 35){
+            const alerta =
+            document.getElementById('alertaClima');
 
-alerta.innerHTML = `
-🔥 ALERTA DE CALOR EXTREMO:
-Aumente irrigação e monitore o solo.
-`;
-
-dashboardAlert.innerHTML =
-'🔥 Temperatura muito alta';
-
-}
+            const dashboardAlert =
+            document.getElementById(
+                'dashboardAlert'
+            );
 
 
-// Chuva
+            // Geada
 
-else if(
-data.weather[0].description.includes('chuva')
-){
+            if(temp <= 5){
 
-alerta.innerHTML = `
-🌧️ ALERTA DE CHUVA:
-Monitore drenagem e plantações.
-`;
+                alerta.innerHTML = `
+                ❄️ ALERTA DE GEADA:<br><br>
+                Proteja plantações contra frio intenso.
+                `;
 
-dashboardAlert.innerHTML =
-'🌧️ Chuvas previstas';
+                dashboardAlert.innerHTML =
+                '❄️ Risco de geada';
 
-}
+            }
 
 
-// Normal
+            // Calor
 
-else{
+            else if(temp >= 35){
 
-alerta.innerHTML = `
-✅ Clima favorável para agricultura.
-`;
+                alerta.innerHTML = `
+                🔥 ALERTA DE CALOR:<br><br>
+                Aumente a irrigação e monitore o solo.
+                `;
 
-dashboardAlert.innerHTML =
-'✅ Clima favorável';
+                dashboardAlert.innerHTML =
+                '🔥 Temperatura muito alta';
 
-}
+            }
 
-}catch(error){
 
-mostrarClimaPadrao();
+            // Chuva
 
-}
+            else if(
+                data.weather[0]
+                .description
+                .includes('chuva')
+            ){
 
-},
+                alerta.innerHTML = `
+                🌧️ ALERTA DE CHUVA:<br><br>
+                Monitore drenagem e plantações.
+                `;
 
-(error)=>{
+                dashboardAlert.innerHTML =
+                '🌧️ Chuvas previstas';
 
-mostrarClimaPadrao();
+            }
 
-}
+
+            // Normal
+
+            else{
+
+                alerta.innerHTML = `
+                ✅ Clima favorável para agricultura.
+                `;
+
+                dashboardAlert.innerHTML =
+                '✅ Clima favorável';
+
+            }
+
+        }
+
+        catch(error){
+
+            mostrarClimaPadrao();
+
+        }
+
+    },
+
+    (error)=>{
+
+        mostrarClimaPadrao();
+
+    }
 
 );
 
 
 // ================================
-// CLIMA OFFLINE
+// CLIMA PADRÃO
 // ================================
 
 function mostrarClimaPadrao(){
 
-document.querySelector('.weather-box')
-.innerHTML = `
+    document.getElementById('tempMapa')
+    .innerHTML = '18°C';
 
-<h3>🌦️ Guarapuava</h3>
+    document.getElementById('umidadeMapa')
+    .innerHTML = '82%';
 
-<p>🌡️ Temperatura: 18°C</p>
+    document.getElementById('ventoMapa')
+    .innerHTML = '9 km/h';
 
-<p>💧 Umidade: 82%</p>
-
-<p>🌬️ Vento: 9 km/h</p>
-
-<p>⚠️ Modo offline ativado</p>
-
-`;
+    document.getElementById('climaMapa')
+    .innerHTML = 'Limpo';
 
 }
 
@@ -397,203 +379,201 @@ document.querySelector('.weather-box')
 
 function calcularSustentabilidade(){
 
-const agua =
-Number(document.getElementById('agua').value);
+    const agua =
+    Number(
+        document.getElementById('agua').value
+    );
 
-const solar =
-Number(document.getElementById('solar').value);
+    const solar =
+    Number(
+        document.getElementById('solar').value
+    );
 
-const verde =
-Number(document.getElementById('verde').value);
+    const verde =
+    Number(
+        document.getElementById('verde').value
+    );
 
-const media =
-Math.round((agua + solar + verde) / 3);
+    const media =
+    Math.round(
+        (agua + solar + verde) / 3
+    );
 
-let nivel = '';
+    let nivel = '';
 
-if(media < 40){
 
-nivel =
-'❌ Sustentabilidade baixa';
+    // Resultado baixo
 
-}
+    if(media < 40){
 
-else if(media < 70){
+        nivel =
+        '❌ Sustentabilidade baixa';
 
-nivel =
-'⚠️ Sustentabilidade média';
+    }
 
-}
 
-else{
+    // Resultado médio
 
-nivel =
-'✅ Sustentabilidade excelente';
+    else if(media < 70){
 
-}
+        nivel =
+        '⚠️ Sustentabilidade média';
 
-document.getElementById(
-'resultadoSimulador'
-).innerHTML = `
+    }
 
-🌱 Resultado: ${media}%<br><br>
 
-${nivel}
+    // Resultado alto
 
-`;
+    else{
+
+        nivel =
+        '✅ Sustentabilidade excelente';
+
+    }
+
+    document.getElementById(
+        'resultadoSimulador'
+    ).innerHTML = `
+
+    🌱 Resultado: ${media}%<br><br>
+
+    ${nivel}
+
+    `;
 
 }
 
 
 // ================================
-// CENTRAL EDUCACIONAL
+// DIAGNÓSTICO INTELIGENTE
 // ================================
 
 function mostrarInfo(tipo){
 
-const resposta =
-document.getElementById('respostaIA');
+    const resposta =
+    document.getElementById('respostaIA');
 
 
-// Água
+    // Água
 
-if(tipo == 'agua'){
+    if(tipo == 'agua'){
 
-resposta.innerHTML = `
+        resposta.innerHTML = `
 
-<h3>💧 Economia de Água</h3>
+        <h3>💧 Economia de Água</h3>
 
-<p>
-Sensores inteligentes ajudam a economizar água e evitar desperdícios.
-</p>
+        <p>
+        Sua propriedade pode reduzir desperdício utilizando irrigação inteligente e monitoramento do solo.
+        </p>
 
-`;
+        `;
 
-}
+    }
 
 
-// Energia
+    // Energia
 
-else if(tipo == 'energia'){
+    else if(tipo == 'energia'){
 
-resposta.innerHTML = `
+        resposta.innerHTML = `
 
-<h3>☀️ Energia Solar</h3>
+        <h3>☀️ Energia Solar</h3>
 
-<p>
-A energia solar reduz custos e ajuda o meio ambiente.
-</p>
+        <p>
+        O uso de energia solar reduz custos e melhora a sustentabilidade rural.
+        </p>
 
-`;
+        `;
 
-}
+    }
 
 
-// Drones
+    // Drones
 
-else if(tipo == 'drones'){
+    else if(tipo == 'drones'){
 
-resposta.innerHTML = `
+        resposta.innerHTML = `
 
-<h3>🚁 Drones Agrícolas</h3>
+        <h3>🚁 Drones Agrícolas</h3>
 
-<p>
-Drones monitoram plantações e ajudam produtores rurais.
-</p>
+        <p>
+        Drones ajudam no monitoramento de plantações e identificação de pragas.
+        </p>
 
-`;
+        `;
 
-}
+    }
 
 
-// Solo
+    // Solo
 
-else if(tipo == 'solo'){
+    else if(tipo == 'solo'){
 
-resposta.innerHTML = `
+        resposta.innerHTML = `
 
-<h3>🌱 Preservação do Solo</h3>
+        <h3>🌱 Preservação do Solo</h3>
 
-<p>
-A preservação do solo evita erosão e melhora a produção.
-</p>
+        <p>
+        Técnicas sustentáveis ajudam a evitar erosão e melhorar a produtividade.
+        </p>
 
-`;
+        `;
 
-}
+    }
 
 
-// Clima
+    // Clima
 
-else if(tipo == 'clima'){
+    else if(tipo == 'clima'){
 
-resposta.innerHTML = `
+        resposta.innerHTML = `
 
-<h3>🌦️ Mudanças Climáticas</h3>
+        <h3>🌦️ Mudanças Climáticas</h3>
 
-<p>
-Mudanças climáticas podem causar secas, geadas e chuvas intensas.
-</p>
+        <p>
+        O monitoramento climático ajuda produtores a evitar prejuízos com secas e chuvas fortes.
+        </p>
 
-`;
+        `;
 
-}
+    }
 
 
-// Sustentabilidade
+    // Sustentabilidade
 
-else if(tipo == 'sustentabilidade'){
+    else if(tipo == 'sustentabilidade'){
 
-resposta.innerHTML = `
+        resposta.innerHTML = `
 
-<h3>🌎 Sustentabilidade</h3>
+        <h3>🌎 Sustentabilidade</h3>
 
-<p>
-A agricultura sustentável ajuda o planeta e melhora a produção.
-</p>
+        <p>
+        Agricultura sustentável melhora a produção e preserva o meio ambiente.
+        </p>
 
-`;
+        `;
 
-}
+    }
 
 
-// Scroll automático
+    // Scroll automático
 
-setTimeout(() => {
+    setTimeout(() => {
 
-const y =
+        const y =
 
-resposta.getBoundingClientRect().top +
+        resposta.getBoundingClientRect().top +
 
-window.pageYOffset - 120;
+        window.pageYOffset - 120;
 
-window.scrollTo({
+        window.scrollTo({
 
-top: y,
-behavior: 'smooth'
+            top: y,
+            behavior: 'smooth'
 
-});
+        });
 
-}, 200);
-
-}
-
-
-// ================================
-// ABRIR AJUDA
-// ================================
-
-function abrirAjuda(){
-
-document.getElementById('helpModal')
-.style.display = 'block';
-
-}
-
-function fecharAjuda(){
-
-document.getElementById('helpModal')
-.style.display = 'none';
+    }, 200);
 
 }
 
@@ -604,27 +584,31 @@ document.getElementById('helpModal')
 
 function entrarSite(){
 
-const intro =
-document.getElementById('intro-screen');
+    const intro =
+    document.getElementById(
+        'intro-screen'
+    );
 
-const site =
-document.getElementById('site-content');
+    const site =
+    document.getElementById(
+        'site-content'
+    );
 
-intro.style.opacity = '0';
+    intro.style.opacity = '0';
 
-intro.style.transform =
-'scale(1.1)';
+    intro.style.transform =
+    'scale(1.1)';
 
-setTimeout(()=>{
+    setTimeout(()=>{
 
-intro.style.display = 'none';
+        intro.style.display = 'none';
 
-site.style.opacity = '1';
+        site.style.opacity = '1';
 
-document.body.style.overflow =
-'auto';
+        document.body.style.overflow =
+        'auto';
 
-},1000);
+    },1000);
 
 }
 
@@ -636,15 +620,17 @@ document.body.style.overflow =
 const observer =
 new IntersectionObserver((entries)=>{
 
-entries.forEach((entry)=>{
+    entries.forEach((entry)=>{
 
-if(entry.isIntersecting){
+        if(entry.isIntersecting){
 
-entry.target.classList.add('show');
+            entry.target.classList.add(
+                'show'
+            );
 
-}
+        }
 
-});
+    });
 
 });
 
