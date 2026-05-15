@@ -9,7 +9,6 @@ box-sizing:border-box;
 scroll-behavior:smooth;
 }
 
-
 /* ===============================
 BODY
 =============================== */
@@ -21,7 +20,6 @@ color:white;
 overflow:hidden;
 transition:0.4s;
 }
-
 
 /* ===============================
 PARTÍCULAS
@@ -36,7 +34,6 @@ height:100%;
 z-index:-2;
 pointer-events:none;
 }
-
 
 /* ===============================
 HEADER
@@ -80,7 +77,6 @@ nav ul li a:hover{
 color:#00ff88;
 }
 
-
 /* ===============================
 BOTÕES NAV
 =============================== */
@@ -104,7 +100,6 @@ transition:0.3s;
 .buttons-nav button:hover{
 transform:scale(1.05);
 }
-
 
 /* ===============================
 INTRO SCREEN
@@ -169,7 +164,6 @@ transform:scale(1.08);
 box-shadow:0 0 30px rgba(0,255,136,0.6);
 }
 
-
 /* ===============================
 SITE ESCONDIDO
 =============================== */
@@ -179,7 +173,6 @@ opacity:0;
 transition:1s;
 }
 
-
 /* ===============================
 HERO
 =============================== */
@@ -187,9 +180,9 @@ HERO
 .hero{
 min-height:100vh;
 display:flex;
+flex-direction:column;
 justify-content:center;
 align-items:center;
-flex-direction:column;
 text-align:center;
 padding:120px 20px;
 
@@ -213,7 +206,6 @@ margin-bottom:30px;
 color:white;
 }
 
-
 /* ===============================
 BOTÃO
 =============================== */
@@ -233,13 +225,11 @@ transition:0.3s;
 transform:scale(1.05);
 }
 
-
 /* ===============================
 SEÇÕES
 =============================== */
 
 .section,
-.weather-section,
 .map-section,
 .simulator-section,
 .ia-section,
@@ -256,6 +246,60 @@ font-size:50px;
 margin-bottom:60px;
 }
 
+/* ===============================
+DASHBOARD HERO
+=============================== */
+
+.hero-dashboard{
+margin-top:50px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+width:100%;
+max-width:1200px;
+}
+
+.dashboard-card{
+background:rgba(255,255,255,0.08);
+border:1px solid rgba(255,255,255,0.1);
+backdrop-filter:blur(12px);
+padding:30px;
+border-radius:25px;
+transition:0.4s;
+box-shadow:0 0 25px rgba(0,255,136,0.08);
+}
+
+.dashboard-card:hover{
+transform:translateY(-10px) scale(1.03);
+box-shadow:0 0 35px rgba(0,255,136,0.3);
+}
+
+.dashboard-card h3{
+font-size:22px;
+margin-bottom:20px;
+color:#7CFF88;
+}
+
+.dashboard-card p{
+font-size:30px;
+font-weight:700;
+}
+
+.alert-card{
+border:1px solid rgba(0,255,136,0.3);
+
+background:
+linear-gradient(
+135deg,
+rgba(0,255,136,0.12),
+rgba(0,0,0,0.3)
+);
+}
+
+.alert-card p{
+font-size:20px;
+line-height:1.6;
+}
 
 /* ===============================
 CARDS
@@ -295,7 +339,6 @@ padding:20px;
 padding:0 20px 30px;
 }
 
-
 /* ===============================
 BOXES
 =============================== */
@@ -326,9 +369,8 @@ font-size:22px;
 margin:10px 0;
 }
 
-
 /* ===============================
-MAPA
+MAPA CLIMÁTICO
 =============================== */
 
 .climate-map{
@@ -380,7 +422,6 @@ font-size:35px;
 color:#00ff88;
 }
 
-
 /* ===============================
 SIMULADOR
 =============================== */
@@ -424,9 +465,8 @@ font-size:20px;
 line-height:1.8;
 }
 
-
 /* ===============================
-IA
+CENTRAL EDUCACIONAL
 =============================== */
 
 .ia-section{
@@ -472,7 +512,6 @@ margin-bottom:20px;
 color:#00ff88;
 }
 
-
 /* ===============================
 MODAL
 =============================== */
@@ -504,7 +543,6 @@ float:right;
 font-size:35px;
 cursor:pointer;
 }
-
 
 /* ===============================
 HELP
@@ -571,6 +609,16 @@ transition:0.4s;
 transform:scale(1.05);
 }
 
+/* ===============================
+ALERTA CLIMÁTICO
+=============================== */
+
+#alertaClima{
+font-size:24px;
+line-height:1.8;
+font-weight:bold;
+text-align:center;
+}
 
 /* ===============================
 FOOTER
@@ -582,7 +630,6 @@ text-align:center;
 background:rgba(0,0,0,0.4);
 margin-top:50px;
 }
-
 
 /* ===============================
 MODO CLARO
@@ -619,13 +666,12 @@ background:#d8ecd9;
 color:#111;
 }
 
-/* HERO CONTINUA BRANCO */
+/* TEXTO HERO CONTINUA BRANCO */
 
 .light-mode .hero-content h1,
 .light-mode .hero-content p{
 color:white !important;
 }
-
 
 /* ===============================
 ANIMAÇÕES
@@ -654,7 +700,6 @@ opacity:1;
 
 }
 
-
 /* ===============================
 RESPONSIVO
 =============================== */
@@ -667,11 +712,6 @@ gap:20px;
 }
 
 nav ul{
-flex-wrap:wrap;
-justify-content:center;
-}
-
-.buttons-nav{
 flex-wrap:wrap;
 justify-content:center;
 }
@@ -706,117 +746,12 @@ height:700px;
 flex-direction:column;
 }
 
-}
-
-
-/* ===============================
-DASHBOARD
-=============================== */
-
 .hero-dashboard{
-
-margin-top:50px;
-
-display:grid;
-
-grid-template-columns:
-repeat(auto-fit,minmax(220px,1fr));
-
-gap:25px;
-
-width:100%;
-
-max-width:1200px;
-
-}
-
-.dashboard-card{
-
-width:100%;
-
-background:rgba(255,255,255,0.08);
-
-border:1px solid rgba(255,255,255,0.1);
-
-backdrop-filter:blur(12px);
-
-padding:30px;
-
-border-radius:25px;
-
-transition:0.4s;
-
-box-shadow:
-0 0 25px rgba(0,255,136,0.08);
-
-}
-
-.dashboard-card:hover{
-
-transform:
-translateY(-10px) scale(1.03);
-
-box-shadow:
-0 0 35px rgba(0,255,136,0.3);
-
-}
-
-.dashboard-card h3{
-
-font-size:22px;
-
-margin-bottom:20px;
-
-color:#7CFF88;
-
-}
-
-.dashboard-card p{
-
-font-size:30px;
-
-font-weight:700;
-
-}
-
-.alert-card{
-
-border:1px solid rgba(0,255,136,0.3);
-
-background:
-linear-gradient(
-135deg,
-rgba(0,255,136,0.12),
-rgba(0,0,0,0.3)
-);
-
-}
-
-.alert-card p{
-
-font-size:20px;
-
-line-height:1.6;
-
-}
-
-
-/* ===============================
-RESPONSIVO DASHBOARD
-=============================== */
-
-@media(max-width:768px){
-
-.hero-dashboard{
-
 grid-template-columns:1fr;
-
 }
 
 .dashboard-card p{
-
 font-size:24px;
-
 }
 
 }
