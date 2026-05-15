@@ -229,6 +229,18 @@ data.wind.speed + ' km/h';
 document.getElementById('climaMapa').innerHTML =
 data.weather[0].description;
 
+  // ==========================================
+// DASHBOARD MELHORADO
+// ==========================================
+
+document.getElementById('dashboardTemp')
+.innerHTML = temp + '°C';
+
+document.getElementById('dashboardHumidity')
+.innerHTML = data.main.humidity + '%';
+
+document.getElementById('dashboardWind')
+.innerHTML = data.wind.speed + ' km/h';
 
 // ==========================================
 // ALERTAS CLIMÁTICOS
