@@ -566,7 +566,7 @@ margin-top:50px;
 }
 
 /* ===============================
-LIGHT MODE
+MODo CLARO/ESCURO
 =============================== */
 
 .light-mode{
@@ -677,6 +677,113 @@ height:700px;
 
 .map-overlay{
 flex-direction:column;
+}
+
+}
+
+/* ===================================== */
+/* DASHBOARD MELHORADO*/
+/* ===================================== */
+
+.hero-dashboard{
+
+margin-top:50px;
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+
+gap:25px;
+
+width:100%;
+
+max-width:1200px;
+
+}
+
+.dashboard-card{
+
+background:rgba(255,255,255,0.08);
+
+border:1px solid rgba(255,255,255,0.1);
+
+backdrop-filter:blur(12px);
+
+padding:30px;
+
+border-radius:25px;
+
+transition:0.4s;
+
+box-shadow:
+0 0 25px rgba(0,255,136,0.08);
+
+}
+
+.dashboard-card:hover{
+
+transform:
+translateY(-10px) scale(1.03);
+
+box-shadow:
+0 0 35px rgba(0,255,136,0.3);
+
+}
+
+.dashboard-card h3{
+
+font-size:22px;
+
+margin-bottom:20px;
+
+color:#7CFF88;
+
+}
+
+.dashboard-card p{
+
+font-size:30px;
+
+font-weight:700;
+
+}
+
+.alert-card{
+
+border:1px solid rgba(0,255,136,0.3);
+
+background:
+linear-gradient(
+135deg,
+rgba(0,255,136,0.12),
+rgba(0,0,0,0.3)
+);
+
+}
+
+.alert-card p{
+
+font-size:20px;
+
+line-height:1.6;
+
+}
+
+/* RESPONSIVO */
+
+@media(max-width:768px){
+
+.hero-dashboard{
+
+grid-template-columns:1fr;
+
+}
+
+.dashboard-card p{
+
+font-size:24px;
+
 }
 
 }
