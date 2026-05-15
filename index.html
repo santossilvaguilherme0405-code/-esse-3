@@ -3,7 +3,7 @@
 
 <head>
 
-    <!-- Configuração -->
+    <!-- Configurações -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -45,10 +45,10 @@
 
     </div>
 
-    <!-- Conteúdo do site -->
+    <!-- Conteúdo principal -->
     <div id="site-content">
 
-        <!-- Fundo animado -->
+        <!-- Fundo -->
         <div id="particles-js"></div>
 
         <!-- Menu -->
@@ -63,6 +63,8 @@
                     <li><a href="#inicio">Início</a></li>
 
                     <li><a href="#tecnologias">Tecnologias</a></li>
+
+                    <li><a href="#diagnostico">Diagnóstico</a></li>
 
                     <li><a href="#mapa">Clima</a></li>
 
@@ -96,11 +98,11 @@
                 </h1>
 
                 <p>
-                    Equilíbrio entre produção agrícola, tecnologia e preservação ambiental.
+                    Tecnologia agrícola, monitoramento climático e sustentabilidade em um só lugar.
                 </p>
 
-                <a href="#tecnologias" class="btn">
-                    Explorar o Futuro
+                <a href="#diagnostico" class="btn">
+                    Fazer Diagnóstico
                 </a>
 
             </div>
@@ -149,7 +151,9 @@
         <!-- Tecnologias -->
         <section class="section hidden" id="tecnologias">
 
-            <h2 class="title">Tecnologias Sustentáveis</h2>
+            <h2 class="title">
+                Tecnologias Sustentáveis
+            </h2>
 
             <div class="cards">
 
@@ -196,6 +200,50 @@
 
         </section>
 
+        <!-- Diagnóstico -->
+        <section class="ia-section hidden" id="diagnostico">
+
+            <h2 class="title">
+                🌱 Diagnóstico Inteligente Rural
+            </h2>
+
+            <div class="ia-grid">
+
+                <button onclick="mostrarInfo('agua')">
+                    💧 Economia de Água
+                </button>
+
+                <button onclick="mostrarInfo('energia')">
+                    ☀️ Energia Solar
+                </button>
+
+                <button onclick="mostrarInfo('drones')">
+                    🚁 Drones Agrícolas
+                </button>
+
+                <button onclick="mostrarInfo('solo')">
+                    🌱 Preservação do Solo
+                </button>
+
+                <button onclick="mostrarInfo('clima')">
+                    🌦️ Mudanças Climáticas
+                </button>
+
+                <button onclick="mostrarInfo('sustentabilidade')">
+                    🌎 Sustentabilidade
+                </button>
+
+            </div>
+
+            <!-- Resposta -->
+            <div class="ia-resposta" id="respostaIA">
+
+                Clique em um tema acima para receber um diagnóstico agrícola inteligente.
+
+            </div>
+
+        </section>
+
         <!-- Clima -->
         <section class="map-section hidden" id="mapa">
 
@@ -207,7 +255,7 @@
 
                 <img
                     src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2000&auto=format&fit=crop"
-                    alt="Mapa">
+                    alt="Mapa climático">
 
                 <div class="map-overlay">
 
@@ -256,7 +304,9 @@
         <!-- Alertas -->
         <section class="alert-section hidden">
 
-            <h2 class="title">🚨 Alertas Agrícolas</h2>
+            <h2 class="title">
+                🚨 Alertas Agrícolas
+            </h2>
 
             <div class="weather-box" id="alertaClima">
 
@@ -299,7 +349,7 @@
 
         </section>
 
-        <!-- Ajuda -->
+        <!-- Central de ajuda -->
         <section class="help-section hidden" id="ajuda">
 
             <h2 class="title">
@@ -313,7 +363,7 @@
                     <h3>📡 Simepar Paraná</h3>
 
                     <p>
-                        Acompanhe alertas e previsões do tempo.
+                        Acompanhe previsões e alertas climáticos oficiais.
                     </p>
 
                     <a
@@ -332,7 +382,17 @@
                     <h3>💧 Economia de Água</h3>
 
                     <p>
-                        Aprenda técnicas sustentáveis.
+                        Aprenda técnicas sustentáveis para economizar água no campo.
+                    </p>
+
+                </div>
+
+                <div class="help-card">
+
+                    <h3>🌱 Sustentabilidade</h3>
+
+                    <p>
+                        Conheça práticas agrícolas sustentáveis e modernas.
                     </p>
 
                 </div>
@@ -342,7 +402,7 @@
                     <h3>🚁 Tecnologia no Campo</h3>
 
                     <p>
-                        Conheça drones e sensores agrícolas.
+                        Descubra drones, sensores e monitoramento inteligente.
                     </p>
 
                 </div>
@@ -392,7 +452,7 @@
 
     </div>
 
-    <!-- VLibras -->
+    <!-- Script VLibras -->
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 
     <!-- JS -->
