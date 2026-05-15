@@ -3,56 +3,28 @@
 
 <head>
 
-    <!-- Configurações básicas do site -->
+    <!-- Configuração -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Título da página -->
+    <!-- Nome do site -->
     <title>Agro Forte - Futuro Sustentável</title>
 
-    <!-- Arquivo CSS -->
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- Fonte Google -->
+    <!-- Fonte -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Biblioteca de partículas -->
+    <!-- Partículas -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
 </head>
 
 <body>
-
-    <!-- Modal da Central de Ajuda -->
-    <div class="modal" id="helpModal">
-
-        <div class="modal-content">
-
-            <!-- Botão de fechar -->
-            <span class="close" onclick="fecharAjuda()">
-                &times;
-            </span>
-
-            <h2>📞 Central de Ajuda Agro</h2>
-
-            <p>
-                🌦️ Monitore o clima diariamente.<br><br>
-
-                💧 Utilize irrigação inteligente.<br><br>
-
-                🌱 Preserve o solo e os recursos naturais.<br><br>
-
-                🚁 Use tecnologias sustentáveis no campo.<br><br>
-
-                ☀️ Invista em energia limpa e produção consciente.
-            </p>
-
-        </div>
-
-    </div>
 
     <!-- Tela inicial -->
     <div id="intro-screen">
@@ -73,25 +45,29 @@
 
     </div>
 
-    <!-- Conteúdo principal -->
+    <!-- Conteúdo do site -->
     <div id="site-content">
 
-        <!-- Fundo com partículas -->
+        <!-- Fundo animado -->
         <div id="particles-js"></div>
 
-        <!-- Cabeçalho -->
+        <!-- Menu -->
         <header>
 
             <nav>
 
                 <div class="logo">🌱 AgroFuture</div>
 
-                <!-- Menu -->
                 <ul>
+
                     <li><a href="#inicio">Início</a></li>
+
                     <li><a href="#tecnologias">Tecnologias</a></li>
+
                     <li><a href="#mapa">Clima</a></li>
-                    <li><a href="#mapa">Mapa</a></li>
+
+                    <li><a href="#ajuda">Ajuda</a></li>
+
                 </ul>
 
                 <!-- Botões -->
@@ -109,7 +85,7 @@
 
         </header>
 
-        <!-- Banner principal -->
+        <!-- Banner -->
         <section class="hero" id="inicio">
 
             <div class="hero-content">
@@ -129,32 +105,45 @@
 
             </div>
 
+            <!-- Dashboard -->
             <div class="hero-dashboard">
 
-<div class="dashboard-card">
-<h3>🌡️ Temperatura</h3>
-<p id="dashboardTemp">18°C</p>
-</div>
+                <div class="dashboard-card">
 
-<div class="dashboard-card">
-<h3>💧 Umidade</h3>
-<p id="dashboardHumidity">82%</p>
-</div>
+                    <h3>🌡️ Temperatura</h3>
 
-<div class="dashboard-card">
-<h3>🌬️ Ventos</h3>
-<p id="dashboardWind">9 km/h</p>
-</div>
+                    <p id="dashboardTemp">18°C</p>
 
-<div class="dashboard-card alert-card">
-<h3>🚨 ALERTA</h3>
-<p id="dashboardAlert">
-Clima favorável para agricultura.
-</p>
-</div>
+                </div>
 
-</div>
-            
+                <div class="dashboard-card">
+
+                    <h3>💧 Umidade</h3>
+
+                    <p id="dashboardHumidity">82%</p>
+
+                </div>
+
+                <div class="dashboard-card">
+
+                    <h3>🌬️ Ventos</h3>
+
+                    <p id="dashboardWind">9 km/h</p>
+
+                </div>
+
+                <div class="dashboard-card alert-card">
+
+                    <h3>🚨 ALERTA</h3>
+
+                    <p id="dashboardAlert">
+                        Clima favorável para agricultura.
+                    </p>
+
+                </div>
+
+            </div>
+
         </section>
 
         <!-- Tecnologias -->
@@ -164,7 +153,7 @@ Clima favorável para agricultura.
 
             <div class="cards">
 
-                <!-- Card 1 -->
+                <!-- Card -->
                 <div class="card" onclick="openModal(1)">
 
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxu4dNOazibN4iARJRyAJvg_WEutVfIblLxw&s">
@@ -177,7 +166,7 @@ Clima favorável para agricultura.
 
                 </div>
 
-                <!-- Card 2 -->
+                <!-- Card -->
                 <div class="card" onclick="openModal(2)">
 
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVRAtwWSKrPG8t0dZbfo2qdBneLQimVkOmng&s">
@@ -190,7 +179,7 @@ Clima favorável para agricultura.
 
                 </div>
 
-                <!-- Card 3 -->
+                <!-- Card -->
                 <div class="card" onclick="openModal(3)">
 
                     <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1600&auto=format&fit=crop">
@@ -207,85 +196,19 @@ Clima favorável para agricultura.
 
         </section>
 
-        <!-- Central Educacional -->
-        <section class="ia-section hidden">
-
-            <h2 class="title">🌱 Central Educacional Agro</h2>
-
-            <div class="ia-grid">
-
-                <button onclick="mostrarInfo('agua')">
-                    💧 Economia de Água
-                </button>
-
-                <button onclick="mostrarInfo('energia')">
-                    ☀️ Energia Solar
-                </button>
-
-                <button onclick="mostrarInfo('drones')">
-                    🚁 Drones Agrícolas
-                </button>
-
-                <button onclick="mostrarInfo('solo')">
-                    🌱 Preservação do Solo
-                </button>
-
-                <button onclick="mostrarInfo('clima')">
-                    🌦️ Mudanças Climáticas
-                </button>
-
-                <button onclick="mostrarInfo('sustentabilidade')">
-                    🌎 Sustentabilidade
-                </button>
-
-                <button onclick="mostrarInfo('geada')">
-                    ❄️ Alertas de Geada
-                </button>
-
-                <button onclick="mostrarInfo('chuva')">
-                    🌧️ Chuvas Intensas
-                </button>
-
-                <button onclick="mostrarInfo('pragas')">
-                    🐛 Controle de Pragas
-                </button>
-
-                <button onclick="mostrarInfo('economia')">
-                    💰 Economia Rural
-                </button>
-
-                <button onclick="mostrarInfo('sensores')">
-                    📡 Sensores Inteligentes
-                </button>
-
-                <button onclick="mostrarInfo('carbono')">
-                    🌳 Redução de Carbono
-                </button>
-
-            </div>
-
-            <!-- Área de resposta -->
-            <div class="ia-resposta" id="respostaIA">
-
-                Clique em um tema acima para aprender mais sobre agricultura sustentável.
-
-            </div>
-
-        </section>
-
-        <!-- Clima agrícola -->
+        <!-- Clima -->
         <section class="map-section hidden" id="mapa">
 
-            <h2 class="title">🌦️ Clima Agrícola em Tempo Real</h2>
+            <h2 class="title">
+                🌦️ Clima Agrícola em Tempo Real
+            </h2>
 
             <div class="climate-map">
 
-                <!-- Imagem de fundo -->
                 <img
                     src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2000&auto=format&fit=crop"
-                    alt="Mapa climático">
+                    alt="Mapa">
 
-                <!-- Informações do clima -->
                 <div class="map-overlay">
 
                     <div class="climate-card">
@@ -294,15 +217,6 @@ Clima favorável para agricultura.
                         <br>
 
                         <b id="tempMapa">18°C</b>
-
-                    </div>
-
-                    <div class="climate-card">
-
-                        🌦️ Clima
-                        <br>
-
-                        <b id="climaMapa">Limpo</b>
 
                     </div>
 
@@ -324,6 +238,15 @@ Clima favorável para agricultura.
 
                     </div>
 
+                    <div class="climate-card">
+
+                        🌦️ Clima
+                        <br>
+
+                        <b id="climaMapa">Limpo</b>
+
+                    </div>
+
                 </div>
 
             </div>
@@ -337,7 +260,7 @@ Clima favorável para agricultura.
 
             <div class="weather-box" id="alertaClima">
 
-                🌦️ Monitorando condições climáticas...
+                🌦️ Monitorando clima...
 
             </div>
 
@@ -346,15 +269,17 @@ Clima favorável para agricultura.
         <!-- Simulador -->
         <section class="simulator-section hidden">
 
-            <h2 class="title">Simulador Sustentável</h2>
+            <h2 class="title">
+                Simulador Sustentável
+            </h2>
 
             <div class="simulator-box">
 
-                <label>💧 Uso inteligente de água</label>
+                <label>💧 Uso de água</label>
 
                 <input type="range" min="0" max="100" value="50" id="agua">
 
-                <label>☀️ Uso de energia solar</label>
+                <label>☀️ Energia solar</label>
 
                 <input type="range" min="0" max="100" value="50" id="solar">
 
@@ -363,7 +288,9 @@ Clima favorável para agricultura.
                 <input type="range" min="0" max="100" value="50" id="verde">
 
                 <button onclick="calcularSustentabilidade()">
+
                     Calcular Sustentabilidade
+
                 </button>
 
                 <div id="resultadoSimulador"></div>
@@ -372,37 +299,21 @@ Clima favorável para agricultura.
 
         </section>
 
-        <!-- Modal das tecnologias -->
-        <div class="modal" id="modal">
+        <!-- Ajuda -->
+        <section class="help-section hidden" id="ajuda">
 
-            <div class="modal-content">
-
-                <span class="close" onclick="closeModal()">
-                    &times;
-                </span>
-
-                <h2 id="modalTitle"></h2>
-
-                <p id="modalText"></p>
-
-            </div>
-
-        </div>
-
-        <!-- Central de ajuda -->
-        <section class="help-section hidden">
-
-            <h2 class="title">📞 Central de Ajuda Agro</h2>
+            <h2 class="title">
+                📞 Central de Ajuda Agro
+            </h2>
 
             <div class="help-grid">
 
-                <!-- Simepar -->
                 <div class="help-card">
 
                     <h3>📡 Simepar Paraná</h3>
 
                     <p>
-                        Acompanhe previsões meteorológicas, alertas climáticos e informações oficiais do tempo no Paraná através do Simepar.
+                        Acompanhe alertas e previsões do tempo.
                     </p>
 
                     <a
@@ -410,70 +321,31 @@ Clima favorável para agricultura.
                         target="_blank"
                         class="btn">
 
-                        Acessar Simepar
+                        Acessar
 
                     </a>
 
                 </div>
 
-                <!-- Card -->
-                <div class="help-card">
-
-                    <h3>🌦️ Clima e Previsão</h3>
-
-                    <p>
-                        Acompanhe mudanças climáticas e informações importantes para proteger plantações e melhorar a produção agrícola.
-                    </p>
-
-                </div>
-
-                <!-- Card -->
                 <div class="help-card">
 
                     <h3>💧 Economia de Água</h3>
 
                     <p>
-                        Aprenda técnicas sustentáveis para reduzir desperdícios e preservar recursos hídricos no campo.
+                        Aprenda técnicas sustentáveis.
                     </p>
 
                 </div>
 
-                <!-- Card -->
-                <div class="help-card">
-
-                    <h3>🌱 Sustentabilidade</h3>
-
-                    <p>
-                        Descubra práticas agrícolas sustentáveis que ajudam a proteger o meio ambiente e aumentar produtividade.
-                    </p>
-
-                </div>
-
-                <!-- Card -->
                 <div class="help-card">
 
                     <h3>🚁 Tecnologia no Campo</h3>
 
                     <p>
-                        Conheça tecnologias modernas como drones, sensores e monitoramento inteligente aplicados no agronegócio.
+                        Conheça drones e sensores agrícolas.
                     </p>
 
                 </div>
-
-            </div>
-
-            <!-- Área de suporte -->
-            <div class="help-contact">
-
-                <h3>📍 Suporte Rural</h3>
-
-                <p>
-                    Em caso de emergências climáticas ou dúvidas agrícolas, procure órgãos ambientais e assistência técnica da sua região.
-                </p>
-
-                <button onclick="abrirAjuda()">
-                    Abrir Central
-                </button>
 
             </div>
 
@@ -482,9 +354,28 @@ Clima favorável para agricultura.
         <!-- Rodapé -->
         <footer>
 
-            <h2>🌱 Agro Forte - Futuro Sustentável</h2>
+            <h2>
+                🌱 Agro Forte - Futuro Sustentável
+            </h2>
 
         </footer>
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+
+        <div class="modal-content">
+
+            <span class="close" onclick="closeModal()">
+                &times;
+            </span>
+
+            <h2 id="modalTitle"></h2>
+
+            <p id="modalText"></p>
+
+        </div>
 
     </div>
 
@@ -501,10 +392,10 @@ Clima favorável para agricultura.
 
     </div>
 
-    <!-- Script do VLibras -->
+    <!-- VLibras -->
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 
-    <!-- Arquivo JS -->
+    <!-- JS -->
     <script src="script.js"></script>
 
 </body>
